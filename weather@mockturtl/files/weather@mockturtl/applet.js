@@ -512,16 +512,14 @@ MyApplet.prototype = {
   refreshWeather: function refreshWeather(recurse) {  
     switch(this._dataService) {
       case DATA_SERVICE.OPEN_WEATHER_MAP: 
-        if(!this.getOpenWeatherCurrentWeather() || !this.getOpenWeatherForecast()) {
+        // Need to run both, so single |
+        if(!this.getOpenWeatherCurrentWeather() | !this.getOpenWeatherForecast()) {
           return false;
         }
         break;
       default:
         return false;
     }
-    // At this point the data is parsed into our objects, display
-    this.displayWeather();
-    this.displayForecast();
     if (recurse) {
       Mainloop.timeout_add_seconds(this._refreshInterval * 60, Lang.bind(this, function() {
         this.refreshWeather(true)
@@ -1042,7 +1040,8 @@ MyApplet.prototype = {
         }))
         return false;
       }    
-      this.parseOpenWeather(json);
+      this.parseOpenWeather(json);      // At this point the data is parsed into our objects, display
+      this.displayWeather();
       return true;
     })
   },
@@ -1068,6 +1067,7 @@ MyApplet.prototype = {
       }
       
       this.parseOpenWeatherForecast(json.list);
+      this.displayForecast();
       return true;
     })
   },

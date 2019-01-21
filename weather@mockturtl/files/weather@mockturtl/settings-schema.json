@@ -7,6 +7,10 @@
   { "type": "keybinding"
   , "description": "Set the keybinding to call the menu"
   , "default": "<Super><Shift>w"
+  },
+  "providerSettings":
+  { "type": "header"
+  , "description": "Weather Provider Settings"
   }
 , "dataService":
   { "type": "radiogroup"
@@ -17,24 +21,28 @@
       "OpenWeatherMap": "OpenWeatherMap"
     }
   },
-  "getLocation":
-  {
-    "type": "button",
-    "description": "Get LocationID",
-    "callback": "locationLookup",
-    "tooltip": "Gets the current Location for the API"
-  },
   "location":
   { "type": "entry"
   , "default": "London,uk"
   , "description": "Location"
-  , "tooltip": "Enter Like this: 'LocationID' or 'City,CountryCode' or Latitude,Longtitude"
+  , "tooltip": "Enter Like this: 'LocationID' or 'City,CountryCode' or 'Zip,CountryCode' or Latitude,Longtitude"
 }
 , "apiKey":
   { "type": "entry"
   , "default": ""
   , "description": "API Key"
   , "tooltip": "Of your choice of Data service"
+  },
+  "getLocation":
+  {
+    "type": "button",
+    "description": "Help with Weather provider settings",
+    "callback": "locationLookup",
+    "tooltip": "Opens webpage guide"
+  },
+  "personalSettings":
+  { "type": "header"
+  , "description": "Personal Settings"
   }
 , "temperatureUnit":
   { "type": "radiogroup"

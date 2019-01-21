@@ -330,7 +330,7 @@ MyApplet.prototype = {
     let command = "xdg-open ";
     switch(this._dataService) {
       case DATA_SERVICE.OPEN_WEATHER_MAP:
-        Util.spawnCommandLine(command + "https://openweathermap.org/find?");
+        Util.spawnCommandLine(command + "https://github.com/linuxmint/cinnamon-spices-applets/tree/master/weather%40mockturtl");
         break;
       default:
 
@@ -509,17 +509,44 @@ MyApplet.prototype = {
     })
   },
 
+  noApiKey: function() {
+    if (this._apiKey == undefined || this._apiKey == "") {
+      return true;
+    }
+    return false;
+  },
+
+  displayLabelError: function(errorMsg) {
+    this.set_applet_label(errorMsg);
+    this.set_applet_tooltip("Click to open");
+    this.set_applet_icon_name("");
+  },
+
   refreshWeather: function refreshWeather(recurse) {  
+    // Adding resilience against bad user input
+    if (this._location == undefined || this._location == "") {
+      this.displayLabelError("No location provided");
+      return false;
+    }
     switch(this._dataService) {
       case DATA_SERVICE.OPEN_WEATHER_MAP: 
         // Need to run both, so single |
+        if (this.noApiKey()) {
+          this.displayLabelError("No Api Key provided");
+          return false;
+        }
         if(!this.getOpenWeatherCurrentWeather() | !this.getOpenWeatherForecast()) {
+          this.displayLabelError("Service not available");
+          Mainloop.timeout_add_seconds(30, Lang.bind(this, function() {
+            this.refreshWeather(false);
+          }))
           return false;
         }
         break;
       default:
         return false;
     }
+    global.log("refresh went through");
     if (recurse) {
       Mainloop.timeout_add_seconds(this._refreshInterval * 60, Lang.bind(this, function() {
         this.refreshWeather(true)
@@ -1023,8 +1050,14 @@ MyApplet.prototype = {
 
   getOpenWeatherCurrentWeather: function() {  
     let query = this.getOpenWeatherQueryString(SERVICE.OpenWeatherMap.QUERY_URL); 
+    if (query == "") {
+      return false;
+    }
     this.loadJsonAsync(query, function(json) {
-      if (!json || json.cod != 200) {; 
+      if (!json) {
+        return false;
+      }
+      if (json.cod != 200) {
         if (json.cod == 401) {
           this._currentWeatherSummary.text = "Wrong API Key";
         }
@@ -1034,23 +1067,24 @@ MyApplet.prototype = {
         if (json.cod == 429) {
           this._currentWeatherSummary.text = "Account Temp. Blocked";
         }
-        // Polling for likely API throttling
-        Mainloop.timeout_add_seconds(10, Lang.bind(this, function() {
-          this.refreshWeather(false)
-        }))
         return false;
-      }    
-      this.parseOpenWeather(json);      // At this point the data is parsed into our objects, display
+      }
+      this.parseOpenWeather(json);   
       this.displayWeather();
       return true;
     })
   },
 
   getOpenWeatherForecast: function() {
-    let query = this.getOpenWeatherQueryString(SERVICE.OpenWeatherMap.FORECAST_URL);   
+    let query = this.getOpenWeatherQueryString(SERVICE.OpenWeatherMap.FORECAST_URL);
+    if (query == "") {
+      return false;
+    } 
     this.loadJsonAsync(query, function(json) {
-      if (!json || json.cod != 200) {
-        // Polling for likely API throttling
+      if (!json) {
+        return false;
+      }
+      if (json.cod != 200) {
         if (json.cod == 401) {
           this._currentWeatherSummary.text = "Wrong API Key";
         }
@@ -1060,9 +1094,6 @@ MyApplet.prototype = {
         if (json.cod == 429) {
           this._currentWeatherSummary.text = "Account Temp. Blocked";
         }
-        Mainloop.timeout_add_seconds(10, Lang.bind(this, function() {
-          this.refreshWeather(false)
-        }))
         return false;
       }
       
@@ -1175,6 +1206,9 @@ MyApplet.prototype = {
     }
     else if (this.isID(loc)) {
       return url + "id=" + loc + "&APPID=" + APIKey;
+    }
+    else { //bad string
+      return "";
     }
   },
 

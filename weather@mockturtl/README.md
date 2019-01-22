@@ -5,11 +5,24 @@ Adaptation of Gnome Shell's [weather extension](https://github.com/simon04/gnome
 cinnamon-weather uses [Semantic Versioning](http://semver.org/).  For the current version number, see `metadata.json`.  
 
 ----
-## Weather Provider Help
+
+## OpenWeatherMap API Key Setup
+Go to [OpenWeatherMap](https://openweathermap.org/) and create an account. Select their free tier. Then go your [API keys section](https://home.openweathermap.org/api_keys) where you should find one key already created.
+
+![openweathermap_api_guide_screenshot](https://user-images.githubusercontent.com/3834659/51522944-69b6a200-1ddf-11e9-9435-60e50a81db06.png)
+
+Copy this key and paste it into the "API Key" field in the applet configuration window.
+
+## OpenWeatherMap Location
+The following formats are supported:
+
+* City, Country Code (e.g. London, UK)
+* Zipcode, Country Code (e.g. 94111, US)
+* Latitude, Longitude (e.g. 37.77, 122.41)
+
+If the location you try does not work, try using [OpenWeatherMap's finder](https://openweathermap.org/find) and paste the coordinates.
+
 ### OpenWeatherMap
-Head over [OpenWeatherMap](https://openweathermap.org/)  and create an account. Get the API key. Open the applet configuration and plop it in. If you don't live in a major city, it might not pick up your location. I'd suggest reading [here](https://openweathermap.org/current#one) to ascertain your location.
-
-
 
 ## Requirements
 

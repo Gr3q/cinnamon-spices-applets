@@ -21,22 +21,22 @@
       "OpenWeatherMap": "OpenWeatherMap"
     }
   },
-  "location":
-  { "type": "entry"
-  , "default": "London,uk"
-  , "description": "Location"
-  , "tooltip": "Enter Like this: 'LocationID' or 'City,CountryCode' or 'Zip,CountryCode' or Latitude,Longtitude"
-}
-, "apiKey":
+  "apiKey":
   { "type": "entry"
   , "default": ""
   , "description": "API Key"
-  , "tooltip": "Of your choice of Data service"
+  , "tooltip": "Copy this from your account on OpenWeatherMap and paste it here."
   },
+  "location":
+  { "type": "entry"
+  , "default": "London,UK"
+  , "description": "Location"
+  , "tooltip": "Acceptable inputs: City,CountryCode or Zipcode,CountryCode or Latitude,Longtitude"
+},
   "getLocation":
   {
     "type": "button",
-    "description": "Help with Weather provider settings",
+    "description": "Setup API Key and Location",
     "callback": "locationLookup",
     "tooltip": "Opens webpage guide"
   },

@@ -1197,7 +1197,7 @@ MyApplet.prototype = {
     let APIKey = this._apiKey;
     let loc = this._location;
     if (this.isCoordinate(loc)) {
-      let location = loc.split(',');
+      let location = loc.replace(/ /g,'').split(',');
       return url + "lat=" + location[0] + "&lon=" + location[1] + "&APPID=" + APIKey;
     }
     else if (this.isLocation(loc)) {

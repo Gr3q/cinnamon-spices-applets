@@ -386,7 +386,7 @@ class WeatherApplet extends Applet.TextIconApplet {
           this.log.Error("Error: No Response from API");
           reject(null);
         }
-      });
+      }, null);
     });
     return json;
   };

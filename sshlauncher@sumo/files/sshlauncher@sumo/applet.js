@@ -4,6 +4,7 @@ const GLib = imports.gi.GLib;
 const Lang = imports.lang;
 const Mainloop = imports.mainloop;
 const PopupMenu = imports.ui.popupMenu;
+const {PopupSubMenuMenuItem} = imports.ui.popupMenu;
 const St = imports.gi.St;
 const Main = imports.ui.main;
 const Util = imports.misc.util; // Needed for spawnCommandLine()
@@ -36,6 +37,14 @@ const KEYS = {
 };
 const CUSTOM_ICON_KEY = "themeIcon";
 const SYMBOLIC_ICON_KEY = "symbolicIcon";
+
+/** Modified PopupSubmenuItem (non-collapsable, no triangle) */
+function GetServerSubMenu() {
+  let menu = new PopupSubMenuMenuItem("Servers: ")
+  menu.removeActor(menu._triangleBin);
+  menu.menu.close = function() {}
+  return menu;
+}
 
 function MyApplet(metadata, orientation, panel_height, instance_id) {
   this._init(metadata, orientation, panel_height, instance_id);
@@ -189,6 +198,8 @@ MyApplet.prototype = {
     this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
 
     try {
+      this.list = GetServerSubMenu();
+      this.menu.addMenuItem(this.list);
       let [res, out, err, status] = GLib.spawn_command_line_sync('grep -e "^Host " -e "^#GroupStart" -e "^#GroupEnd" .ssh/config');
       if(out.length!=0) {
         let inGroup = false;
@@ -202,7 +213,7 @@ MyApplet.prototype = {
                 let hostname = host.replace("#GroupStart", "").trim();
                 if (hostname != "") {
                     Grouper = new PopupMenu.PopupSubMenuMenuItem(hostname);
-                    this.menu.addMenuItem(Grouper);
+                    this.list.menu.addMenuItem(Grouper);
                     inGroup = true;
                 }
                 continue;
@@ -215,9 +226,10 @@ MyApplet.prototype = {
             let item = new PopupMenu.PopupMenuItem(hostname);
             item.connect('activate', Lang.bind(this, function() { this.connectTo(hostname); }));
             if (inGroup) {
+              global.log("Added")
               Grouper.menu.addMenuItem(item);
             } else {
-              this.menu.addMenuItem(item);
+              this.list.menu.addMenuItem(item);
             }
           }
         }
@@ -270,6 +282,7 @@ MyApplet.prototype = {
 
   on_applet_clicked: function(event) {
     this.menu.toggle();
+    this.list.activate();
   },
 
   toggleHeadless: function(event) {

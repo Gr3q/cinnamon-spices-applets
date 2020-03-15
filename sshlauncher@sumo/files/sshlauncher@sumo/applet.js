@@ -189,14 +189,14 @@ MyApplet.prototype = {
     this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
 
     try {
-      let [res, out, err, status] = GLib.spawn_command_line_sync('grep -e "^Host " -e "^#GroupStart" -e "^#GroupEnd" .ssh/config');
+      let [res, out, err, status] = GLib.spawn_command_line_sync('grep -ie "^Host " -e "^#GroupStart" -e "^#GroupEnd" .ssh/config');
       if(out.length!=0) {
         let inGroup = false;
         let hosts = out.toString().split("\n");
         let Grouper = null;
 
         for(let i=0; i<hosts.length; i++) {
-          let host = hosts[i];
+          let host = hosts[i].trim();
           if(host != "") {
            if (host.startsWith("#GroupStart")) {
                 let hostname = host.replace("#GroupStart", "").trim();
@@ -211,7 +211,7 @@ MyApplet.prototype = {
                 continue;
            }
 
-            let hostname = host.replace("Host ", "");
+            let hostname = host.replace("Host ", "").replace("host ", "");
             let item = new PopupMenu.PopupMenuItem(hostname);
             item.connect('activate', Lang.bind(this, function() { this.connectTo(hostname); }));
             if (inGroup) {

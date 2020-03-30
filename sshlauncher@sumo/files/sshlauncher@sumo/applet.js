@@ -178,6 +178,7 @@ MyApplet.prototype = {
   },
 
   updateMenu: function() {
+    global.log("Updating menu")
     this.menu.removeAll();
     let menuitemHeadless = new PopupMenu.PopupSwitchMenuItem(_("Background (-fN)"));
     menuitemHeadless.connect('activate', Lang.bind(this, this.toggleHeadless));
@@ -189,39 +190,47 @@ MyApplet.prototype = {
     this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
 
     try {
-      let [res, out, err, status] = GLib.spawn_command_line_sync('grep -ie "^Host " -e "^#GroupStart" -e "^#GroupEnd" .ssh/config');
-      if(out.length!=0) {
+        let [res, out, err, status] = GLib.spawn_command_line_sync('grep -ie "^Host " -e "^#GroupStart" -e "^#GroupEnd" -ie "^Include " .ssh/config');
+        if(out.length == 0) return; 
         let inGroup = false;
         let hosts = out.toString().split("\n");
         let Grouper = null;
 
         for(let i=0; i<hosts.length; i++) {
-          let host = hosts[i].trim();
-          if(host != "") {
-           if (host.startsWith("#GroupStart")) {
-                let hostname = host.replace("#GroupStart", "").trim();
-                if (hostname != "") {
-                    Grouper = new PopupMenu.PopupSubMenuMenuItem(hostname);
-                    this.menu.addMenuItem(Grouper);
-                    inGroup = true;
-                }
-                continue;
-           } else if (host === "#GroupEnd") {
-                inGroup = false;
-                continue;
-           }
+            let host = hosts[i].trim();
+            let item = null;
+            if (host == "") continue;
+
+            if (host.startsWith("Include ") || host.startsWith("include ")) {
+              global.log("Include starts")
+              this.addInclude(host);
+              continue;
+            }
+
+            if (host.startsWith("#GroupStart")) {
+                  let hostname = host.replace("#GroupStart", "").trim();
+                  if (hostname != "") {
+                      Grouper = new PopupMenu.PopupSubMenuMenuItem(hostname);
+                      this.menu.addMenuItem(Grouper);
+                      inGroup = true;
+                  }
+                  continue;
+            } else if (host === "#GroupEnd") {
+                  inGroup = false;
+                  continue;
+            }
 
             let hostname = host.replace("Host ", "").replace("host ", "");
             let item = new PopupMenu.PopupMenuItem(hostname);
             item.connect('activate', Lang.bind(this, function() { this.connectTo(hostname); }));
+          
             if (inGroup) {
               Grouper.menu.addMenuItem(item);
             } else {
               this.menu.addMenuItem(item);
             }
-          }
         }
-      }
+    
     } catch(e) {
       this.menu.addMenuItem(new PopupMenu.PopupMenuItem(_("ERROR. ") + e, { reactive: false }));
     }
@@ -229,6 +238,24 @@ MyApplet.prototype = {
     let menuitemEdit = new PopupMenu.PopupMenuItem(_("Edit SSH config"));
     menuitemEdit.connect('activate', Lang.bind(this, this.editConfig));
     this.menu.addMenuItem(menuitemEdit);
+  },
+
+  addInclude: function(includeLine) {
+    global.log("Include called")
+    let folder = includeLine.replace("Include", " ").replace("include ", "").trim();
+    global.log('grep -ie "^Host " -e "^#GroupStart" -e "^#GroupEnd" ~/.ssh/' + folder)
+    let [res, out, err, status] = GLib.spawn_command_line_sync('grep -ie "^Host " -e "^#GroupStart" -e "^#GroupEnd" .ssh/' + folder);
+    global.log("Grep finished")
+    global.log(out.length)
+    if (out.length == 0) return;
+
+    let hosts = out.toString().split("\n");
+
+    for (let index = 0; index < hosts.length; index++) {
+      const element = hosts[index];
+      const line = element.split(/:[Hh]ost /);
+      global.log(line)
+    }
   },
 
   connectTo: function(hostname) {

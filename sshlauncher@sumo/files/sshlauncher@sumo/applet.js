@@ -343,6 +343,10 @@ const terminalOptions = {
     "title": "-n",
     "execute": ["-e"]
   },
+  "terminator": {
+    "title": null,
+    "execute": ["-x"]
+  },
   "lxterminal": {
     "title": "-t",
     "execute": ["-e"]

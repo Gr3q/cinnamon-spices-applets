@@ -1,0 +1,585 @@
+# Translator list
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cinnamenu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-04 02:56+0000\n"
+"PO-Revision-Date: 2020-07-20 08:10+0100\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 2.3.1\n"
+
+msgid "Type to search..."
+msgstr "Введите запрос для поиска..."
+
+msgid "Initializing"
+msgstr ""
+
+msgid "No description available"
+msgstr "Нет доступного описания"
+
+#, fuzzy
+msgid "All applications"
+msgstr "Все приложения"
+
+msgid "Places"
+msgstr "Места"
+
+#, fuzzy
+msgid "Recent files"
+msgstr "Недавние файлы"
+
+msgid "Bookmarks"
+msgstr "Закладки"
+
+#, fuzzy
+msgid "Favorite apps"
+msgstr "Избранные приложения"
+
+msgid "gir1.2-gda-5.0 package required for Firefox and Midori bookmarks."
+msgstr "gir1.2-gda-5.0, необходимый для закладок Firefox и Midori."
+
+msgid "Clear List"
+msgstr "Очистить список"
+
+#, fuzzy
+msgid "No recent files"
+msgstr "Недавние файлы"
+
+msgid "Account details"
+msgstr "Детали учетной записи"
+
+msgid "Grid View"
+msgstr "В виде сетки"
+
+msgid "List View"
+msgstr "В виде списка"
+
+msgid "Switch to grid view"
+msgstr "Переключить на вид сетки"
+
+msgid "Switch to list view"
+msgstr "Переключить на вид списка"
+
+#, fuzzy
+msgid "Lock screen"
+msgstr "Заблокировать экран"
+
+msgid "Lock the screen"
+msgstr "Заблокировать экран"
+
+msgid "Logout"
+msgstr "Выйти"
+
+msgid "Leave the session"
+msgstr "Покинуть сессию"
+
+msgid "Quit"
+msgstr "Выход"
+
+msgid "Shutdown the computer"
+msgstr "Выключить компьютер"
+
+msgid "Home"
+msgstr "Домашняя папка"
+
+msgid "Computer"
+msgstr "Компьютер"
+
+msgid "Browse network"
+msgstr "Обзор сети"
+
+msgid "Run with NVIDIA GPU"
+msgstr "Запустить с NVIDIA GPU"
+
+msgid "Add to panel"
+msgstr "Добавить на панель"
+
+msgid "Add to desktop"
+msgstr "Добавить на Рабочий стол"
+
+msgid "Remove from favorites"
+msgstr "Удалить из Избранного"
+
+msgid "Add to favorites"
+msgstr "Добавить в Избранное"
+
+msgid "Uninstall"
+msgstr "Удалить"
+
+msgid "Find files..."
+msgstr ""
+
+msgid "Please wait..."
+msgstr "Пожалуйста, подождите..."
+
+msgid "Solution:"
+msgstr ""
+
+msgid "Click to copy"
+msgstr ""
+
+#, fuzzy
+msgid "Search web for"
+msgstr "Поисковые провайдеры"
+
+msgid "Too many entries - showing first 1000 entries only"
+msgstr ""
+
+#, fuzzy
+msgid "Favorites"
+msgstr "Избранные приложения"
+
+msgid "Home folder"
+msgstr ""
+
+msgid "Reset category order"
+msgstr "Сбросить заказ категории"
+
+msgid "This file is no longer available"
+msgstr ""
+
+msgid "Open with"
+msgstr ""
+
+#, fuzzy
+msgid "Other application..."
+msgstr "Показывать значки приложений"
+
+msgid "Open containing folder"
+msgstr ""
+
+msgid "Move to trash"
+msgstr ""
+
+msgid "Error while moving file to trash:"
+msgstr ""
+
+msgid "Open..."
+msgstr ""
+
+msgid "Open Containing Folder..."
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Start in"
+msgstr ""
+
+msgid "Select a folder"
+msgstr ""
+
+msgid "Follow symlinks"
+msgstr ""
+
+#, fuzzy
+msgid "Search hidden"
+msgstr "Поисковые провайдеры"
+
+msgid "Use regular expressions"
+msgstr ""
+
+msgid "Stop"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "Path"
+msgstr ""
+
+msgid "Searching..."
+msgstr ""
+
+#, fuzzy
+msgid "Search Stopped"
+msgstr "Поисковые провайдеры"
+
+msgid "Searching: "
+msgstr ""
+
+msgid "Error: insufficient permissions to read folder "
+msgstr ""
+
+msgid "Search Completed"
+msgstr ""
+
+msgid "Skipping"
+msgstr ""
+
+msgid " - directory already searched"
+msgstr ""
+
+msgid "Cinnamenu"
+msgstr "Cinnamenu"
+
+msgid ""
+"A flexible menu providing formatting options, web bookmarks, search provider "
+"support and fuzzy searching."
+msgstr ""
+"Гибкое меню с параметрами форматирования, веб-закладками, поддержкой "
+"поставщиков поиска и нечетким поиском."
+
+msgid "Behavior"
+msgstr "Поведение"
+
+msgid "Appearance"
+msgstr "Оформление"
+
+msgid "Layout and Content"
+msgstr "Макет и содержание"
+
+msgid "Search Providers"
+msgstr "Поисковые провайдеры"
+
+msgid "No search provider extensions found"
+msgstr ""
+
+msgid "Panel"
+msgstr "панель"
+
+msgid "Menu"
+msgstr "Меню"
+
+msgid "Layout"
+msgstr "раскладка"
+
+msgid "Content"
+msgstr "содержание"
+
+msgid "Recent files settings"
+msgstr "Настройки последних файлов"
+
+msgid "Open the menu editor"
+msgstr "Открыть редактор меню"
+
+msgid "Use a custom icon"
+msgstr "Использовать свой значок"
+
+msgid "Use a custom icon in the panel"
+msgstr "Используйте пользовательский значок на панели"
+
+msgid "Panel icon"
+msgstr "Значок панели"
+
+msgid "Panel text"
+msgstr "Текст панели"
+
+msgid "Text to show beside the panel icon"
+msgstr "Текст для отображения рядом со значком панели"
+
+msgid "pixels"
+msgstr "пиксели"
+
+msgid "Category icon size"
+msgstr "Размер значка категорий"
+
+msgid "Applications list icon size"
+msgstr "Размер значков в списке приложений"
+
+msgid "Applications grid icon size"
+msgstr "Размер значков в сетке приложений"
+
+msgid "Keyboard shortcut to open and close the menu"
+msgstr "Сочетание клавиш для открытия и закрытия меню"
+
+msgid "Open menu on hover"
+msgstr "Открыть меню при наведении"
+
+msgid "Open the menu when I move my mouse over the panel icon"
+msgstr "Откройте меню, когда наведите курсор мыши на значок панели"
+
+msgid "milliseconds"
+msgstr "миллисекунды"
+
+msgid "Menu hover delay"
+msgstr "Задержка меню"
+
+msgid "Use menu animations"
+msgstr "Использовать анимацию меню"
+
+msgid "Animate the menu on open and close"
+msgstr "Анимировать меню на открывать и закрывать"
+
+msgid "Activate categories on click"
+msgstr "Активировать категории по клику"
+
+msgid "Activate categories on click instead of on hover"
+msgstr "Активировать категории по клику, а не при наведении"
+
+msgid "Enable autoscrolling"
+msgstr "Включить автопрокрутку"
+
+msgid "Enable autoscrolling in application list"
+msgstr "Включить автопрокрутку в списке приложений"
+
+msgid "Show web bookmarks"
+msgstr "Показать веб-закладки"
+
+msgid "Show your browser's web bookmarks in the menu"
+msgstr "Показывать веб-закладки вашего браузера в меню"
+
+msgid "Enable searching of open windows"
+msgstr ""
+
+msgid "Enable search providers"
+msgstr "Включить поисковые провайдеры"
+
+msgid "Include search provider results in searches"
+msgstr "Включить результаты поиска в результаты поиска"
+
+msgid "Example Search Providers"
+msgstr "Пример поиска поставщиков"
+
+msgid "Startup applications view mode"
+msgstr "Режим просмотра запускаемых приложений"
+
+msgid "List"
+msgstr "Список"
+
+msgid "Grid"
+msgstr "Сетка"
+
+msgid "columns"
+msgstr "колонки"
+
+msgid "Number of columns in apps grid"
+msgstr "Номер колонки в сетке приложений"
+
+msgid "Show bookmarks and places"
+msgstr "Показывать закладки и места"
+
+msgid "Show bookmarks and places category in the menu"
+msgstr "Показать категорию закладок и мест в меню"
+
+msgid "Show application icons"
+msgstr "Показывать значки приложений"
+
+msgid "Show category icons"
+msgstr "Показывать значки категорий"
+
+msgid "Show application descriptions under titles"
+msgstr "Показывать описания приложений под заголовками"
+
+msgid "Show tooltips"
+msgstr ""
+
+msgid "Tooltip delay"
+msgstr "Задержка всплывающей подсказки"
+
+msgid "Use a custom menu height"
+msgstr "Используйте настраиваемую высоту меню"
+
+msgid "px"
+msgstr "px"
+
+msgid "Custom menu height"
+msgstr "Пользовательская высота меню"
+
+msgid "Applications view mode"
+msgstr "Режим просмотра приложений"
+
+msgid "View applications as list or grid"
+msgstr "Просмотр приложений в виде списка или сетки"
+
+msgid "Application description placement"
+msgstr "Размещение описания приложения"
+
+msgid "Tooltips"
+msgstr "Всплывающие"
+
+msgid "Under titles"
+msgstr "Под заголовками"
+
+msgid "None"
+msgstr "Никто"
+
+msgid "Choose where to show application descriptions"
+msgstr "Выберите, где показывать описания приложений"
+
+msgid "Session buttons location"
+msgstr "Расположение кнопок сеанса"
+
+msgid "Top"
+msgstr "внизу"
+
+msgid "Bottom"
+msgstr "внизу"
+
+msgid "Left"
+msgstr "налево"
+
+msgid "Right"
+msgstr "направо"
+
+#, fuzzy
+msgid "Choose where to show the session buttons (quit, logout, etc.)"
+msgstr "Выберите, где показывать кнопки сеанса (выход, выход и т. Д.)"
+
+msgid ""
+"\n"
+"Info/tip: Drag on the menu edge to change the menu size.\n"
+msgstr ""
+
+msgid "Add favorites to session buttons"
+msgstr "Добавить избранное в кнопки сеанса"
+
+msgid "Show your favorite app icons next to the session buttons"
+msgstr "Покажите ваши любимые значки приложений рядом с кнопками сеанса"
+
+msgid ""
+"Show your browser's web bookmarks in the menu.\n"
+"Note: Install package gir1.2-gda-5.0 to read firefox bookmarks."
+msgstr ""
+
+msgid "Show favorite apps category"
+msgstr ""
+
+#, fuzzy
+msgid "Show your favorite apps category in the menu"
+msgstr "Показать категорию закладок и мест в меню"
+
+msgid "Show home folder"
+msgstr ""
+
+#, fuzzy
+msgid "Show home folder category in the menu"
+msgstr "Показать категорию закладок и мест в меню"
+
+#, fuzzy
+msgid "Open menu on category:"
+msgstr "Открыть меню при наведении"
+
+msgid "Always open the menu with this category selected"
+msgstr ""
+
+msgid "Last used category"
+msgstr ""
+
+#, fuzzy
+msgid "Autoscroll the application list on mouse hover"
+msgstr "Включить автопрокрутку в списке приложений"
+
+msgid "Web search option"
+msgstr ""
+
+msgid "Google"
+msgstr ""
+
+msgid "Bing"
+msgstr ""
+
+msgid "Yahoo"
+msgstr ""
+
+msgid "DuckDuckGo"
+msgstr ""
+
+msgid "Show an internet search option in search results"
+msgstr ""
+
+msgid "Show hidden files"
+msgstr ""
+
+msgid "Show hidden files in folder view"
+msgstr ""
+
+#, fuzzy
+msgid "Use a custom icon size"
+msgstr "Использовать свой значок"
+
+#, fuzzy
+msgid "Use a custom size for the panel icon"
+msgstr "Используйте пользовательский значок на панели"
+
+#, fuzzy
+msgid "Panel icon size"
+msgstr "Значок панели"
+
+#, fuzzy
+msgid "Choose a custom size for the panel icon"
+msgstr "Используйте пользовательский значок на панели"
+
+#, fuzzy
+msgid "Session buttons icon size"
+msgstr "Расположение кнопок сеанса"
+
+#, fuzzy
+msgid "Use session buttons box style"
+msgstr "Расположение кнопок сеанса"
+
+#~ msgid "No recent documents"
+#~ msgstr "Нет последних документов"
+
+#~ msgid "Remove favorite"
+#~ msgstr "Удалить любимую"
+
+#~ msgid "Failed to launch \"%s\""
+#~ msgstr "Не удалось запустить '%s'"
+
+#~ msgid "Unchecking this allows the theme to set the icon"
+#~ msgstr "Снятие отметки позволяет теме установить значок"
+
+#~ msgid "Icon"
+#~ msgstr "Значок"
+
+#~ msgid "Set the custom menu button icon name"
+#~ msgstr "Установите имя значка кнопки пользовательского меню"
+
+#~ msgid "Enable opening the menu when the mouse enters the applet"
+#~ msgstr "Разрешить открытие меню при входе мыши в апплет"
+
+#~ msgid ""
+#~ "When enabled, category views are activated on click instead of on hover."
+#~ msgstr ""
+#~ "При включении просмотра категорий активируются по щелчку, а не при "
+#~ "наведении."
+
+#~ msgid ""
+#~ "Choose whether or not to enable smooth autoscrolling in the application "
+#~ "list."
+#~ msgstr ""
+#~ "Выберите, следует ли включить плавную автопрокрутку в списке приложений."
+
+#~ msgid "Choose whether or not bookmarks are indexed in the menu."
+#~ msgstr "Выберите, следует ли индексировать закладки в меню."
+
+#, fuzzy
+#~ msgid "Choose whether or not open windows are indexed in menu searches."
+#~ msgstr "Выберите, следует ли показывать закладки и места в меню."
+
+#~ msgid "Choose whether or not to show bookmarks and places in the menu."
+#~ msgstr "Выберите, следует ли показывать закладки и места в меню."
+
+#~ msgid "Choose whether or not to show icons on applications."
+#~ msgstr "Выбрать показывать или нет иконки в приложениях."
+
+#~ msgid "Choose whether or not to show icons on categories."
+#~ msgstr "Выбрать показывать или нет иконки в категориях."
+
+#~ msgid ""
+#~ "Choose whether or not to show the application description on the "
+#~ "application buttons."
+#~ msgstr ""
+#~ "Выберите будут ли показываться примечания к программам под их заголовком"
+
+#~ msgid "Please provide your password to uninstall this application"
+#~ msgstr "Пожалуйста, укажите ваш пароль для удаления этого приложения"
+
+#~ msgid "Enable filesystem path entry in search box"
+#~ msgstr "Включить путь файловой системы в окне поиска"
+
+#~ msgid "Allows path entry in the menu search box."
+#~ msgstr "Позволяет вводить путь в окне поиска меню."
+
+#~ msgid "Cinnamenu Settings"
+#~ msgstr "Настройки Cinnamenu"

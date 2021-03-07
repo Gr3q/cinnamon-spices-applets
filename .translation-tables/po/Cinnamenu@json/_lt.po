@@ -1,0 +1,236 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-04 02:56+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
+
+msgid "All applications"
+msgstr ""
+
+msgid "Recent files"
+msgstr ""
+
+msgid "Favorite apps"
+msgstr ""
+
+msgid "No recent files"
+msgstr ""
+
+msgid "Switch to list view"
+msgstr ""
+
+msgid "Lock screen"
+msgstr ""
+
+msgid "Find files..."
+msgstr ""
+
+msgid "Solution:"
+msgstr ""
+
+msgid "Click to copy"
+msgstr ""
+
+msgid "Search web for"
+msgstr ""
+
+msgid "Too many entries - showing first 1000 entries only"
+msgstr ""
+
+msgid "Favorites"
+msgstr ""
+
+msgid "Home folder"
+msgstr ""
+
+msgid "This file is no longer available"
+msgstr ""
+
+msgid "Open with"
+msgstr ""
+
+msgid "Other application..."
+msgstr ""
+
+msgid "Open containing folder"
+msgstr ""
+
+msgid "Move to trash"
+msgstr ""
+
+msgid "Error while moving file to trash:"
+msgstr ""
+
+msgid "Open..."
+msgstr ""
+
+msgid "Open Containing Folder..."
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Start in"
+msgstr ""
+
+msgid "Select a folder"
+msgstr ""
+
+msgid "Follow symlinks"
+msgstr ""
+
+msgid "Search hidden"
+msgstr ""
+
+msgid "Use regular expressions"
+msgstr ""
+
+msgid "Stop"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "Path"
+msgstr ""
+
+msgid "Searching..."
+msgstr ""
+
+msgid "Search Stopped"
+msgstr ""
+
+msgid "Searching: "
+msgstr ""
+
+msgid "Error: insufficient permissions to read folder "
+msgstr ""
+
+msgid "Search Completed"
+msgstr ""
+
+msgid "Skipping"
+msgstr ""
+
+msgid " - directory already searched"
+msgstr ""
+
+msgid "Cinnamenu"
+msgstr ""
+
+msgid "Use a custom icon in the panel"
+msgstr ""
+
+msgid "Open the menu when I move my mouse over the panel icon"
+msgstr ""
+
+msgid "Animate the menu on open and close"
+msgstr ""
+
+msgid "Activate categories on click instead of on hover"
+msgstr ""
+
+msgid "Enable autoscrolling"
+msgstr ""
+
+msgid "Show your browser's web bookmarks in the menu"
+msgstr ""
+
+msgid "Enable searching of open windows"
+msgstr ""
+
+msgid "Include search provider results in searches"
+msgstr ""
+
+msgid "Show bookmarks and places category in the menu"
+msgstr ""
+
+msgid "px"
+msgstr ""
+
+msgid "Choose where to show the session buttons (quit, logout, etc.)"
+msgstr ""
+
+msgid ""
+"\n"
+"Info/tip: Drag on the menu edge to change the menu size.\n"
+msgstr ""
+
+msgid ""
+"Show your browser's web bookmarks in the menu.\n"
+"Note: Install package gir1.2-gda-5.0 to read firefox bookmarks."
+msgstr ""
+
+msgid "Show favorite apps category"
+msgstr ""
+
+msgid "Show your favorite apps category in the menu"
+msgstr ""
+
+msgid "Show home folder"
+msgstr ""
+
+msgid "Show home folder category in the menu"
+msgstr ""
+
+msgid "Open menu on category:"
+msgstr ""
+
+msgid "Always open the menu with this category selected"
+msgstr ""
+
+msgid "Last used category"
+msgstr ""
+
+msgid "Autoscroll the application list on mouse hover"
+msgstr ""
+
+msgid "Web search option"
+msgstr ""
+
+msgid "Google"
+msgstr ""
+
+msgid "Bing"
+msgstr ""
+
+msgid "Yahoo"
+msgstr ""
+
+msgid "DuckDuckGo"
+msgstr ""
+
+msgid "Show an internet search option in search results"
+msgstr ""
+
+msgid "Show hidden files"
+msgstr ""
+
+msgid "Show hidden files in folder view"
+msgstr ""
+
+msgid "Use a custom icon size"
+msgstr ""
+
+msgid "Use a custom size for the panel icon"
+msgstr ""
+
+msgid "Panel icon size"
+msgstr ""
+
+msgid "Choose a custom size for the panel icon"
+msgstr ""
+
+msgid "Session buttons icon size"
+msgstr ""
+
+msgid "Use session buttons box style"
+msgstr ""

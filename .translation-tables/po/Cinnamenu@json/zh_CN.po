@@ -1,0 +1,601 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-04 02:56+0000\n"
+"PO-Revision-Date: 2020-07-19 01:14+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Type to search..."
+msgstr "键入以搜索..."
+
+msgid "Initializing"
+msgstr ""
+
+msgid "No description available"
+msgstr "没有可用的描述"
+
+#, fuzzy
+msgid "All applications"
+msgstr "所有应用程序"
+
+msgid "Places"
+msgstr "位置"
+
+#, fuzzy
+msgid "Recent files"
+msgstr "最近的文件"
+
+msgid "Bookmarks"
+msgstr "书签"
+
+#, fuzzy
+msgid "Favorite apps"
+msgstr "收藏夹应用程序"
+
+msgid "gir1.2-gda-5.0 package required for Firefox and Midori bookmarks."
+msgstr "Firefox和Midori书签所需的gir1.2-gda-5.0包。"
+
+msgid "Clear List"
+msgstr "清除列表"
+
+#, fuzzy
+msgid "No recent files"
+msgstr "切换最近的文件"
+
+msgid "Account details"
+msgstr ""
+
+msgid "Grid View"
+msgstr "网格视图"
+
+msgid "List View"
+msgstr "列表视图"
+
+msgid "Switch to grid view"
+msgstr "切换到网格视图"
+
+msgid "Switch to list view"
+msgstr "切换到列表视图"
+
+#, fuzzy
+msgid "Lock screen"
+msgstr "锁定屏幕"
+
+msgid "Lock the screen"
+msgstr "锁定屏幕"
+
+msgid "Logout"
+msgstr "注销"
+
+msgid "Leave the session"
+msgstr "离开会话"
+
+msgid "Quit"
+msgstr "退出"
+
+msgid "Shutdown the computer"
+msgstr "关闭计算机"
+
+msgid "Home"
+msgstr "主目录"
+
+msgid "Computer"
+msgstr "计算机"
+
+msgid "Browse network"
+msgstr "浏览网络"
+
+msgid "Run with NVIDIA GPU"
+msgstr "使用NVIDIA GPU运行"
+
+msgid "Add to panel"
+msgstr "添加到面板"
+
+msgid "Add to desktop"
+msgstr "添加到桌面"
+
+msgid "Remove from favorites"
+msgstr "从收藏夹移除"
+
+msgid "Add to favorites"
+msgstr "添加到收藏夹"
+
+msgid "Uninstall"
+msgstr "卸载"
+
+msgid "Find files..."
+msgstr ""
+
+msgid "Please wait..."
+msgstr ""
+
+msgid "Solution:"
+msgstr ""
+
+msgid "Click to copy"
+msgstr ""
+
+#, fuzzy
+msgid "Search web for"
+msgstr "搜索提供者"
+
+msgid "Too many entries - showing first 1000 entries only"
+msgstr ""
+
+#, fuzzy
+msgid "Favorites"
+msgstr "收藏夹应用程序"
+
+msgid "Home folder"
+msgstr ""
+
+msgid "Reset category order"
+msgstr "重置类别顺序"
+
+msgid "This file is no longer available"
+msgstr ""
+
+msgid "Open with"
+msgstr ""
+
+#, fuzzy
+msgid "Other application..."
+msgstr "显示应用程序图标"
+
+msgid "Open containing folder"
+msgstr ""
+
+msgid "Move to trash"
+msgstr ""
+
+msgid "Error while moving file to trash:"
+msgstr ""
+
+msgid "Open..."
+msgstr ""
+
+msgid "Open Containing Folder..."
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Start in"
+msgstr ""
+
+msgid "Select a folder"
+msgstr ""
+
+msgid "Follow symlinks"
+msgstr ""
+
+#, fuzzy
+msgid "Search hidden"
+msgstr "搜索提供者"
+
+msgid "Use regular expressions"
+msgstr ""
+
+msgid "Stop"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "Path"
+msgstr ""
+
+msgid "Searching..."
+msgstr ""
+
+#, fuzzy
+msgid "Search Stopped"
+msgstr "搜索提供者"
+
+msgid "Searching: "
+msgstr ""
+
+msgid "Error: insufficient permissions to read folder "
+msgstr ""
+
+msgid "Search Completed"
+msgstr ""
+
+msgid "Skipping"
+msgstr ""
+
+msgid " - directory already searched"
+msgstr ""
+
+msgid "Cinnamenu"
+msgstr "Cinnamenu"
+
+msgid ""
+"A flexible menu providing formatting options, web bookmarks, search provider "
+"support and fuzzy searching."
+msgstr "灵活的菜单，提供格式选项，Web书签，搜索提供程序支持和模糊搜索。"
+
+msgid "Behavior"
+msgstr "行为"
+
+msgid "Appearance"
+msgstr "外观"
+
+msgid "Layout and Content"
+msgstr "布局和内容"
+
+msgid "Search Providers"
+msgstr "搜索提供者"
+
+msgid "No search provider extensions found"
+msgstr ""
+
+msgid "Panel"
+msgstr "面板"
+
+msgid "Menu"
+msgstr "菜单"
+
+msgid "Layout"
+msgstr "布局"
+
+msgid "Content"
+msgstr "内容"
+
+msgid "Recent files settings"
+msgstr "最近的文件设置"
+
+msgid "Open the menu editor"
+msgstr "打开菜单编辑器"
+
+msgid "Use a custom icon"
+msgstr "使用自定义图标"
+
+msgid "Use a custom icon in the panel"
+msgstr "在面板中使用自定义图标"
+
+msgid "Panel icon"
+msgstr "面板图标"
+
+msgid "Panel text"
+msgstr "面板文字"
+
+msgid "Text to show beside the panel icon"
+msgstr "在面板图标旁边显示的文本"
+
+msgid "pixels"
+msgstr "像素"
+
+msgid "Category icon size"
+msgstr "类别图标大小："
+
+msgid "Applications list icon size"
+msgstr "应用程序列表图标大小"
+
+msgid "Applications grid icon size"
+msgstr "应用程序网格图标大小"
+
+msgid "Keyboard shortcut to open and close the menu"
+msgstr "打开和关闭菜单的键盘快捷键"
+
+msgid "Open menu on hover"
+msgstr "悬停时打开菜单"
+
+#, fuzzy
+msgid "Open the menu when I move my mouse over the panel icon"
+msgstr "当我移动鼠标到菜单上时打开菜单"
+
+msgid "milliseconds"
+msgstr "毫秒"
+
+msgid "Menu hover delay"
+msgstr "菜单悬停延迟"
+
+msgid "Use menu animations"
+msgstr "使用菜单动画"
+
+#, fuzzy
+msgid "Animate the menu on open and close"
+msgstr "允许打开和关闭菜单的动画"
+
+msgid "Activate categories on click"
+msgstr "点击激活类别"
+
+#, fuzzy
+msgid "Activate categories on click instead of on hover"
+msgstr "点击激活类别"
+
+msgid "Enable autoscrolling"
+msgstr "启用自动滚动"
+
+msgid "Enable autoscrolling in application list"
+msgstr "在应用程序列表中启用自动滚动"
+
+msgid "Show web bookmarks"
+msgstr "显示网络书签"
+
+msgid "Show your browser's web bookmarks in the menu"
+msgstr "在菜单中显示浏览器的网络书签"
+
+msgid "Enable searching of open windows"
+msgstr ""
+
+msgid "Enable search providers"
+msgstr "启用搜索提供商"
+
+#, fuzzy
+msgid "Include search provider results in searches"
+msgstr "选择是否在菜单搜索中为搜索提供者的结果建立索引。"
+
+msgid "Example Search Providers"
+msgstr "示例搜索提供程序"
+
+msgid "Startup applications view mode"
+msgstr "启动应用程序视图模式"
+
+msgid "List"
+msgstr "列表"
+
+msgid "Grid"
+msgstr "网格"
+
+msgid "columns"
+msgstr "列"
+
+msgid "Number of columns in apps grid"
+msgstr "应用程序网格中列的数量"
+
+msgid "Show bookmarks and places"
+msgstr "显示书签和位置"
+
+#, fuzzy
+msgid "Show bookmarks and places category in the menu"
+msgstr "显示书签和位置"
+
+msgid "Show application icons"
+msgstr "显示应用程序图标"
+
+msgid "Show category icons"
+msgstr "显示类别图标"
+
+msgid "Show application descriptions under titles"
+msgstr "在标题下显示应用程序描述"
+
+msgid "Show tooltips"
+msgstr ""
+
+msgid "Tooltip delay"
+msgstr "工具提示延迟"
+
+msgid "Use a custom menu height"
+msgstr "使用自定义菜单高度"
+
+msgid "px"
+msgstr "px"
+
+msgid "Custom menu height"
+msgstr "自定义菜单高度"
+
+msgid "Applications view mode"
+msgstr "应用程序查看模式"
+
+msgid "View applications as list or grid"
+msgstr "以列表或网格查看应用程序"
+
+msgid "Application description placement"
+msgstr "应用说明放置"
+
+msgid "Tooltips"
+msgstr "工具提示"
+
+msgid "Under titles"
+msgstr "在标题下"
+
+msgid "None"
+msgstr "没有"
+
+msgid "Choose where to show application descriptions"
+msgstr "选择显示应用程序描述的位置"
+
+msgid "Session buttons location"
+msgstr "会话按钮的位置"
+
+msgid "Top"
+msgstr "最佳"
+
+msgid "Bottom"
+msgstr "底部"
+
+msgid "Left"
+msgstr "剩下"
+
+msgid "Right"
+msgstr "对"
+
+#, fuzzy
+msgid "Choose where to show the session buttons (quit, logout, etc.)"
+msgstr "选择显示会话（退出，注销等）按钮的位置"
+
+msgid ""
+"\n"
+"Info/tip: Drag on the menu edge to change the menu size.\n"
+msgstr ""
+
+msgid "Add favorites to session buttons"
+msgstr "将收藏夹添加到会话按钮"
+
+msgid "Show your favorite app icons next to the session buttons"
+msgstr "在会话按钮旁边显示您喜欢的应用程序图标"
+
+msgid ""
+"Show your browser's web bookmarks in the menu.\n"
+"Note: Install package gir1.2-gda-5.0 to read firefox bookmarks."
+msgstr ""
+
+msgid "Show favorite apps category"
+msgstr ""
+
+#, fuzzy
+msgid "Show your favorite apps category in the menu"
+msgstr "显示书签和位置"
+
+msgid "Show home folder"
+msgstr ""
+
+#, fuzzy
+msgid "Show home folder category in the menu"
+msgstr "显示书签和位置"
+
+#, fuzzy
+msgid "Open menu on category:"
+msgstr "悬停时打开菜单"
+
+msgid "Always open the menu with this category selected"
+msgstr ""
+
+msgid "Last used category"
+msgstr ""
+
+#, fuzzy
+msgid "Autoscroll the application list on mouse hover"
+msgstr "在应用程序列表中启用自动滚动"
+
+msgid "Web search option"
+msgstr ""
+
+msgid "Google"
+msgstr ""
+
+msgid "Bing"
+msgstr ""
+
+msgid "Yahoo"
+msgstr ""
+
+msgid "DuckDuckGo"
+msgstr ""
+
+msgid "Show an internet search option in search results"
+msgstr ""
+
+msgid "Show hidden files"
+msgstr ""
+
+msgid "Show hidden files in folder view"
+msgstr ""
+
+#, fuzzy
+msgid "Use a custom icon size"
+msgstr "使用自定义图标"
+
+#, fuzzy
+msgid "Use a custom size for the panel icon"
+msgstr "在面板中使用自定义图标"
+
+#, fuzzy
+msgid "Panel icon size"
+msgstr "面板图标"
+
+#, fuzzy
+msgid "Choose a custom size for the panel icon"
+msgstr "在面板中使用自定义图标"
+
+#, fuzzy
+msgid "Session buttons icon size"
+msgstr "会话按钮的位置"
+
+#, fuzzy
+msgid "Use session buttons box style"
+msgstr "会话按钮的位置"
+
+#~ msgid "No recent documents"
+#~ msgstr "没有最近的文档"
+
+#~ msgid "Remove favorite"
+#~ msgstr "删除收藏夹"
+
+#~ msgid "Failed to launch \"%s\""
+#~ msgstr "无法启动\"%s\""
+
+#, fuzzy
+#~ msgid "Press this button to customize your privacy settings."
+#~ msgstr "按此按钮自定义您的菜单条目。"
+
+#~ msgid "Press this button to customize your menu entries."
+#~ msgstr "按此按钮自定义您的菜单条目。"
+
+#~ msgid "Unchecking this allows the theme to set the icon"
+#~ msgstr "不选中此项允许主题设置图标"
+
+#~ msgid "Icon"
+#~ msgstr "图标"
+
+#~ msgid "Set the custom menu button icon name"
+#~ msgstr "设置自定义菜单按钮图标名称"
+
+#~ msgid "Enable opening the menu when the mouse enters the applet"
+#~ msgstr "启用当鼠标进入小程序时打开菜单"
+
+#~ msgid "Delay between switching categories"
+#~ msgstr "切换类别间的延迟"
+
+#~ msgid ""
+#~ "When enabled, category views are activated on click instead of on hover."
+#~ msgstr "启用后，将在单击而不是将鼠标悬停时激活类别视图。"
+
+#~ msgid ""
+#~ "Choose whether or not to enable smooth autoscrolling in the application "
+#~ "list."
+#~ msgstr "选择是否在应用程序列表中启用平滑滚动。"
+
+#~ msgid "Choose whether or not bookmarks are indexed in the menu."
+#~ msgstr "选择是否在菜单中索引书签。"
+
+#, fuzzy
+#~ msgid "Choose whether or not open windows are indexed in menu searches."
+#~ msgstr "选择是否在菜单中索引书签。"
+
+#~ msgid "Choose whether or not to show bookmarks and places in the menu."
+#~ msgstr "选择是否在菜单中显示书签和位置。"
+
+#~ msgid "Choose whether or not to show icons on applications."
+#~ msgstr "选择是否显示应用程序的图标。"
+
+#~ msgid "Choose whether or not to show icons on categories."
+#~ msgstr "选择是否显示类别图标。"
+
+#~ msgid ""
+#~ "Choose whether or not to show the application description on the "
+#~ "application buttons."
+#~ msgstr "选择是否在应用程序按钮上显示应用程序说明。"
+
+#~ msgid "Please provide your password to uninstall this application"
+#~ msgstr "请提供您的密码以卸载此应用程序"
+
+#~ msgid "Enable filesystem path entry in search box"
+#~ msgstr "在搜索框中启用文件系统路径条目"
+
+#~ msgid "Allows path entry in the menu search box."
+#~ msgstr "在菜单搜索框中允许路径条目。"
+
+#~ msgid "Cinnamenu Settings"
+#~ msgstr "Cinnamenu设置"
+
+#~ msgid "Applications grid label width"
+#~ msgstr "应用程序网格图标宽度"
+
+#~ msgid "Menu Entries"
+#~ msgstr "菜单条目"

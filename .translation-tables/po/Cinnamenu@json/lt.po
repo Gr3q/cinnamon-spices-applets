@@ -1,0 +1,581 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-04 02:56+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
+
+msgid "Type to search..."
+msgstr "Įveskite paiešką ..."
+
+msgid "Initializing"
+msgstr "Inicijavimas"
+
+msgid "No description available"
+msgstr "Aprašo nėra"
+
+#, fuzzy
+msgid "All applications"
+msgstr "Visos programos"
+
+msgid "Places"
+msgstr "Vietos"
+
+#, fuzzy
+msgid "Recent files"
+msgstr "Naujausi failai"
+
+msgid "Bookmarks"
+msgstr "Žymos"
+
+#, fuzzy
+msgid "Favorite apps"
+msgstr "Mėgstamiausios programos"
+
+msgid "gir1.2-gda-5.0 package required for Firefox and Midori bookmarks."
+msgstr "reikalingas„ gir1.2-gda-5.0 “paketas„ Firefox “ir„ Midori “žymėms."
+
+msgid "Clear List"
+msgstr "Išvalyti sąrašą"
+
+#, fuzzy
+msgid "No recent files"
+msgstr "Perjungti naujausius failus"
+
+msgid "Account details"
+msgstr "Sąskaitos duomenys"
+
+msgid "Grid View"
+msgstr "Tinklelis"
+
+msgid "List View"
+msgstr "Sąrašo vaizdas"
+
+msgid "Switch to grid view"
+msgstr "Perjungti į tinklelio rodinį"
+
+msgid "Switch to list view"
+msgstr ""
+
+#, fuzzy
+msgid "Lock screen"
+msgstr "Užrakinti ekraną"
+
+msgid "Lock the screen"
+msgstr "Užrakinti ekraną"
+
+msgid "Logout"
+msgstr "Atsijungti"
+
+msgid "Leave the session"
+msgstr "Palikti sesiją"
+
+msgid "Quit"
+msgstr "Baigti"
+
+msgid "Shutdown the computer"
+msgstr "Išjungti kompiuterį"
+
+msgid "Home"
+msgstr "Home"
+
+msgid "Computer"
+msgstr "Computer"
+
+msgid "Browse network"
+msgstr "Naršyti tinklą"
+
+msgid "Run with NVIDIA GPU"
+msgstr "Vykdyti su NVIDIA GPU"
+
+msgid "Add to panel"
+msgstr "Pridėti prie skydelio"
+
+msgid "Add to desktop"
+msgstr "Pridėti prie darbalaukio"
+
+msgid "Remove from favorites"
+msgstr "Pašalinti iš parankinių"
+
+msgid "Add to favorites"
+msgstr "Įtraukti į adresyną"
+
+msgid "Uninstall"
+msgstr "Pašalinti"
+
+msgid "Find files..."
+msgstr ""
+
+msgid "Please wait..."
+msgstr "Prašome palaukti ..."
+
+msgid "Solution:"
+msgstr ""
+
+msgid "Click to copy"
+msgstr ""
+
+#, fuzzy
+msgid "Search web for"
+msgstr "Paieškos teikėjai"
+
+msgid "Too many entries - showing first 1000 entries only"
+msgstr ""
+
+#, fuzzy
+msgid "Favorites"
+msgstr "Mėgstamiausios programos"
+
+msgid "Home folder"
+msgstr ""
+
+msgid "Reset category order"
+msgstr "Iš naujo nustatyti kategorijos užsakymą"
+
+msgid "This file is no longer available"
+msgstr ""
+
+msgid "Open with"
+msgstr ""
+
+#, fuzzy
+msgid "Other application..."
+msgstr "Rodyti programos piktogramas"
+
+msgid "Open containing folder"
+msgstr ""
+
+msgid "Move to trash"
+msgstr ""
+
+msgid "Error while moving file to trash:"
+msgstr ""
+
+msgid "Open..."
+msgstr ""
+
+msgid "Open Containing Folder..."
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Start in"
+msgstr ""
+
+msgid "Select a folder"
+msgstr ""
+
+msgid "Follow symlinks"
+msgstr ""
+
+#, fuzzy
+msgid "Search hidden"
+msgstr "Paieškos teikėjai"
+
+msgid "Use regular expressions"
+msgstr ""
+
+msgid "Stop"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "Path"
+msgstr ""
+
+msgid "Searching..."
+msgstr ""
+
+#, fuzzy
+msgid "Search Stopped"
+msgstr "Paieškos teikėjai"
+
+msgid "Searching: "
+msgstr ""
+
+msgid "Error: insufficient permissions to read folder "
+msgstr ""
+
+msgid "Search Completed"
+msgstr ""
+
+msgid "Skipping"
+msgstr ""
+
+msgid " - directory already searched"
+msgstr ""
+
+msgid "Cinnamenu"
+msgstr ""
+
+msgid ""
+"A flexible menu providing formatting options, web bookmarks, search provider "
+"support and fuzzy searching."
+msgstr ""
+"Lankstus meniu, kuriame pateikiamos formatavimo parinktys, žiniatinklio "
+"žymės, paieškos teikėjo palaikymas ir neaiški paieška."
+
+msgid "Behavior"
+msgstr "Elgesys"
+
+msgid "Appearance"
+msgstr "Išvaizda"
+
+msgid "Layout and Content"
+msgstr "Išdėstymas ir turinys"
+
+msgid "Search Providers"
+msgstr "Paieškos teikėjai"
+
+msgid "No search provider extensions found"
+msgstr "Nerasta paieškos paslaugų teikėjo plėtinių"
+
+msgid "Panel"
+msgstr "Skydas"
+
+msgid "Menu"
+msgstr "Meniu"
+
+msgid "Layout"
+msgstr "Maketas"
+
+msgid "Content"
+msgstr "Turinys"
+
+msgid "Recent files settings"
+msgstr "Naujausių failų nustatymai"
+
+msgid "Open the menu editor"
+msgstr "Atidaryti meniu rengyklę"
+
+msgid "Use a custom icon"
+msgstr "Naudoti pasirinktinę piktogramą"
+
+#, fuzzy
+msgid "Use a custom icon in the panel"
+msgstr "Naudoti pasirinktinę piktogramą"
+
+msgid "Panel icon"
+msgstr "Skydelio piktograma"
+
+msgid "Panel text"
+msgstr "Skydelio tekstas"
+
+msgid "Text to show beside the panel icon"
+msgstr "Tekstas, rodomas šalia skydelio piktogramos"
+
+msgid "pixels"
+msgstr "pikselių"
+
+msgid "Category icon size"
+msgstr "Kategorijos piktogramos dydis"
+
+msgid "Applications list icon size"
+msgstr "Programų sąrašo piktogramos dydis"
+
+msgid "Applications grid icon size"
+msgstr "Programų tinklelio piktogramos dydis"
+
+msgid "Keyboard shortcut to open and close the menu"
+msgstr "Spartusis klavišas meniu atidarymui ir uždarymui"
+
+msgid "Open menu on hover"
+msgstr "Atidarykite meniu užveskite pelės žymeklį"
+
+#, fuzzy
+msgid "Open the menu when I move my mouse over the panel icon"
+msgstr "Atidarykite meniu perkeldami pelę virš jo"
+
+msgid "milliseconds"
+msgstr "milisekundės"
+
+msgid "Menu hover delay"
+msgstr "Meniu užvedimo atidėjimas"
+
+msgid "Use menu animations"
+msgstr "Naudoti meniu animaciją"
+
+#, fuzzy
+msgid "Animate the menu on open and close"
+msgstr "Leisti meniu animuoti atidarant ir uždarant"
+
+msgid "Activate categories on click"
+msgstr "Suaktyvinkite kategorijas spustelėdami"
+
+#, fuzzy
+msgid "Activate categories on click instead of on hover"
+msgstr "Suaktyvinkite kategorijas spustelėdami"
+
+#, fuzzy
+msgid "Enable autoscrolling"
+msgstr "Įgalinti automatinį slinktį programų sąraše"
+
+msgid "Enable autoscrolling in application list"
+msgstr "Įgalinti automatinį slinktį programų sąraše"
+
+msgid "Show web bookmarks"
+msgstr "Rodyti žiniatinklio žymes"
+
+msgid "Show your browser's web bookmarks in the menu"
+msgstr ""
+
+msgid "Enable searching of open windows"
+msgstr ""
+
+msgid "Enable search providers"
+msgstr "Įgalinti paieškos teikėjus"
+
+#, fuzzy
+msgid "Include search provider results in searches"
+msgstr ""
+"Pasirinkite, ar paieškos teikėjo rezultatai yra indeksuojami ieškant meniu."
+
+msgid "Example Search Providers"
+msgstr "Paieškos teikėjų pavyzdys"
+
+msgid "Startup applications view mode"
+msgstr "Paleisties programų peržiūros režimas"
+
+msgid "List"
+msgstr "Sąrašas"
+
+msgid "Grid"
+msgstr "Tinklelis"
+
+msgid "columns"
+msgstr "stulpeliai"
+
+msgid "Number of columns in apps grid"
+msgstr "Stulpelių skaičius programų tinklelyje"
+
+msgid "Show bookmarks and places"
+msgstr "Rodyti žymas ir vietas"
+
+#, fuzzy
+msgid "Show bookmarks and places category in the menu"
+msgstr "Rodyti žymas ir vietas"
+
+msgid "Show application icons"
+msgstr "Rodyti programos piktogramas"
+
+msgid "Show category icons"
+msgstr "Rodyti kategorijos piktogramas"
+
+msgid "Show application descriptions under titles"
+msgstr "Rodyti programų aprašus su pavadinimais"
+
+msgid "Show tooltips"
+msgstr "Rodyti patarimus"
+
+msgid "Tooltip delay"
+msgstr "Patarimo patarimas"
+
+msgid "Use a custom menu height"
+msgstr "Naudoti pasirinktinio meniu aukštį"
+
+msgid "px"
+msgstr ""
+
+msgid "Custom menu height"
+msgstr "Pasirinktinio meniu aukštis"
+
+msgid "Applications view mode"
+msgstr "Programų peržiūros režimas"
+
+msgid "View applications as list or grid"
+msgstr "Žiūrėti programas kaip sąrašą arba tinklelį"
+
+msgid "Application description placement"
+msgstr "Programos aprašymo vieta"
+
+msgid "Tooltips"
+msgstr "Patarimai"
+
+msgid "Under titles"
+msgstr "Po pavadinimais"
+
+msgid "None"
+msgstr "Nėra"
+
+msgid "Choose where to show application descriptions"
+msgstr "Pasirinkite, kur norite rodyti programų aprašus"
+
+msgid "Session buttons location"
+msgstr "Sesijos mygtukų vieta"
+
+msgid "Top"
+msgstr "viršuje"
+
+msgid "Bottom"
+msgstr "Apačia"
+
+msgid "Left"
+msgstr "Kairė"
+
+msgid "Right"
+msgstr "Teisingai"
+
+#, fuzzy
+msgid "Choose where to show the session buttons (quit, logout, etc.)"
+msgstr ""
+"Pasirinkite vietą, kur norite rodyti sesijos mygtukus (išeiti, atsijungti ir "
+"tt)"
+
+msgid ""
+"\n"
+"Info/tip: Drag on the menu edge to change the menu size.\n"
+msgstr ""
+
+msgid "Add favorites to session buttons"
+msgstr "Pridėti mėgstamiausius prie sesijos mygtukų"
+
+msgid "Show your favorite app icons next to the session buttons"
+msgstr "Parodykite savo mėgstamos programos piktogramas šalia sesijos mygtukų"
+
+msgid ""
+"Show your browser's web bookmarks in the menu.\n"
+"Note: Install package gir1.2-gda-5.0 to read firefox bookmarks."
+msgstr ""
+
+msgid "Show favorite apps category"
+msgstr ""
+
+#, fuzzy
+msgid "Show your favorite apps category in the menu"
+msgstr "Rodyti žymas ir vietas"
+
+msgid "Show home folder"
+msgstr ""
+
+#, fuzzy
+msgid "Show home folder category in the menu"
+msgstr "Rodyti žymas ir vietas"
+
+#, fuzzy
+msgid "Open menu on category:"
+msgstr "Atidarykite meniu užveskite pelės žymeklį"
+
+msgid "Always open the menu with this category selected"
+msgstr ""
+
+msgid "Last used category"
+msgstr ""
+
+#, fuzzy
+msgid "Autoscroll the application list on mouse hover"
+msgstr "Įgalinti automatinį slinktį programų sąraše"
+
+msgid "Web search option"
+msgstr ""
+
+msgid "Google"
+msgstr ""
+
+msgid "Bing"
+msgstr ""
+
+msgid "Yahoo"
+msgstr ""
+
+msgid "DuckDuckGo"
+msgstr ""
+
+msgid "Show an internet search option in search results"
+msgstr ""
+
+msgid "Show hidden files"
+msgstr ""
+
+msgid "Show hidden files in folder view"
+msgstr ""
+
+#, fuzzy
+msgid "Use a custom icon size"
+msgstr "Naudoti pasirinktinę piktogramą"
+
+#, fuzzy
+msgid "Use a custom size for the panel icon"
+msgstr "Naudoti pasirinktinę piktogramą"
+
+#, fuzzy
+msgid "Panel icon size"
+msgstr "Skydelio piktograma"
+
+#, fuzzy
+msgid "Choose a custom size for the panel icon"
+msgstr "Naudoti pasirinktinę piktogramą"
+
+#, fuzzy
+msgid "Session buttons icon size"
+msgstr "Sesijos mygtukų vieta"
+
+#, fuzzy
+msgid "Use session buttons box style"
+msgstr "Sesijos mygtukų vieta"
+
+#~ msgid "No recent documents"
+#~ msgstr "Nėra naujausių dokumentų"
+
+#~ msgid "Remove favorite"
+#~ msgstr "Pašalinti mėgstamą"
+
+#~ msgid ""
+#~ "Made possible thanks to the efforts of contributors to the Cinnamon menu, "
+#~ "Gnomenu, and the contributors to projects they derived from."
+#~ msgstr ""
+#~ "Tai įmanoma dėl Cinamono meniu „Gnomenu“ bendradarbių ir projektų, iš "
+#~ "kurių jie kilo, pastangų."
+
+#~ msgid "Failed to launch \"%s\""
+#~ msgstr "Nepavyko paleisti \"%s\""
+
+#~ msgid "Press this button to customize your privacy settings."
+#~ msgstr "Paspauskite šį mygtuką norėdami tinkinti savo privatumo nustatymus."
+
+#~ msgid "Press this button to customize your menu entries."
+#~ msgstr "Paspauskite šį mygtuką norėdami tinkinti savo meniu įrašus."
+
+#~ msgid "Unchecking this allows the theme to set the icon"
+#~ msgstr "Panaikinus žymėjimą, tema gali nustatyti piktogramą"
+
+#~ msgid "Icon"
+#~ msgstr "Piktograma"
+
+#~ msgid "Set the custom menu button icon name"
+#~ msgstr "Nustatyti pasirinktinio meniu mygtuko piktogramos pavadinimą"
+
+#~ msgid "Enable opening the menu when the mouse enters the applet"
+#~ msgstr "Įgalinti meniu atidarymą, kai pelė įveda programėlę"
+
+#~ msgid ""
+#~ "When enabled, category views are activated on click instead of on hover."
+#~ msgstr ""
+#~ "Kai įjungta, kategorijų rodiniai suaktyvinami spustelėjus, o ne užvedus "
+#~ "pelę"
+
+#~ msgid ""
+#~ "Choose whether or not to enable smooth autoscrolling in the application "
+#~ "list."
+#~ msgstr ""
+#~ "Pasirinkite, ar programų sąraše įgalinti sklandų automatinį slinktį."
+
+#~ msgid "Choose whether or not bookmarks are indexed in the menu."
+#~ msgstr "Pasirinkite, ar žymos yra indeksuojamos meniu."
+
+#~ msgid "Choose whether or not to show bookmarks and places in the menu."
+#~ msgstr "Pasirinkite, ar nerodyti žymių ir vietų meniu."
+
+#~ msgid "Choose whether or not to show icons on applications."
+#~ msgstr "Pasirinkite, ar programose rodyti piktogramas, ar ne."
+
+#~ msgid "Choose whether or not to show icons on categories."
+#~ msgstr "Pasirinkite, ar kategorijose rodyti piktogramas, ar ne."

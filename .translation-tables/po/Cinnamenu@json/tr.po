@@ -1,0 +1,618 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cinnamenu 3.2.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-04 02:56+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Gökhan Gökkaya <gokhanlnx@gmail.com>\n"
+"Language-Team: tr\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+msgid "Type to search..."
+msgstr "Aramak için yaz..."
+
+msgid "Initializing"
+msgstr "Başlatılıyor"
+
+msgid "No description available"
+msgstr "Açıklama mevcut değil"
+
+msgid "All applications"
+msgstr "Tüm uygulamalar"
+
+msgid "Places"
+msgstr "Yerler"
+
+msgid "Recent files"
+msgstr "Son dosyalar"
+
+msgid "Bookmarks"
+msgstr "Yer İmleri"
+
+msgid "Favorite apps"
+msgstr "Favori uygulamalar"
+
+msgid "gir1.2-gda-5.0 package required for Firefox and Midori bookmarks."
+msgstr "Firefox ve Midori yer imleri için gir1.2-gda-5.0 paketi gerek."
+
+msgid "Clear List"
+msgstr "Listeyi Temizle"
+
+msgid "No recent files"
+msgstr "Son kullanılan dosya yok"
+
+msgid "Account details"
+msgstr "Hesap ayrıntıları"
+
+msgid "Grid View"
+msgstr "Izgara Görünümü"
+
+msgid "List View"
+msgstr "Liste Görünümü"
+
+msgid "Switch to grid view"
+msgstr "Izgara görünümüne geç"
+
+msgid "Switch to list view"
+msgstr "Liste görünümüne geç"
+
+msgid "Lock screen"
+msgstr "Ekranı kilitle"
+
+msgid "Lock the screen"
+msgstr "Ekranı kilitle"
+
+msgid "Logout"
+msgstr "Çıkış Yap"
+
+msgid "Leave the session"
+msgstr "Oturumu açık tut"
+
+msgid "Quit"
+msgstr "Çık"
+
+msgid "Shutdown the computer"
+msgstr "Bilgisayarı kapat"
+
+msgid "Home"
+msgstr "Başlangıç"
+
+msgid "Computer"
+msgstr "Bilgisayar"
+
+msgid "Browse network"
+msgstr "Ağa göz at"
+
+msgid "Run with NVIDIA GPU"
+msgstr "NVIDIA GPU ile çalıştır"
+
+msgid "Add to panel"
+msgstr "Panele ekle"
+
+msgid "Add to desktop"
+msgstr "Masaüstüne ekle"
+
+msgid "Remove from favorites"
+msgstr "Favorilerden kaldır"
+
+msgid "Add to favorites"
+msgstr "Favorilere ekle"
+
+msgid "Uninstall"
+msgstr "Kaldır"
+
+msgid "Find files..."
+msgstr "Dosyaları bul..."
+
+msgid "Please wait..."
+msgstr "Lütfen bekleyin..."
+
+msgid "Solution:"
+msgstr "Çözüm:"
+
+msgid "Click to copy"
+msgstr "Kopyalamak için tıkla"
+
+msgid "Search web for"
+msgstr "İnternette arama seçeneği için"
+
+msgid "Too many entries - showing first 1000 entries only"
+msgstr "Çok fazla girdi - sadece ilk 1000 girdi gösteriliyor"
+
+msgid "Favorites"
+msgstr "Favoriler"
+
+msgid "Home folder"
+msgstr "Ev dizini"
+
+msgid "Reset category order"
+msgstr "Kategori sırasını sıfırla"
+
+msgid "This file is no longer available"
+msgstr "Bu dosya artık mevcut değil"
+
+msgid "Open with"
+msgstr "Birlikte aç"
+
+msgid "Other application..."
+msgstr "Diğer uygulamalar..."
+
+msgid "Open containing folder"
+msgstr "İçeren dizini aç"
+
+msgid "Move to trash"
+msgstr "Çöpe taşı"
+
+msgid "Error while moving file to trash:"
+msgstr "Dosya çöpe taşınırken hata:"
+
+msgid "Open..."
+msgstr "Aç..."
+
+msgid "Open Containing Folder..."
+msgstr "İçeren Dizin Açılıyor..."
+
+msgid "Search"
+msgstr "Ara"
+
+msgid "Start in"
+msgstr "Şurada ara"
+
+msgid "Select a folder"
+msgstr "Bir dizin seç"
+
+msgid "Follow symlinks"
+msgstr "Sembolik bağlantıları takip et"
+
+msgid "Search hidden"
+msgstr "Gizlileri ara"
+
+msgid "Use regular expressions"
+msgstr "Düzenli ifadeler kullan"
+
+msgid "Stop"
+msgstr "Durdur"
+
+msgid "File"
+msgstr "Dosya"
+
+msgid "Path"
+msgstr "Yol"
+
+msgid "Searching..."
+msgstr "Aranıyor..."
+
+msgid "Search Stopped"
+msgstr "Arama Durduruldu"
+
+msgid "Searching: "
+msgstr "Aranıyor: "
+
+msgid "Error: insufficient permissions to read folder "
+msgstr "Hata: Yetersiz dizin okuma izni "
+
+msgid "Search Completed"
+msgstr "Arama Tamamlandı"
+
+msgid "Skipping"
+msgstr "Atlanıyor"
+
+msgid " - directory already searched"
+msgstr " - dizini zaten arandı"
+
+msgid "Cinnamenu"
+msgstr "Cinnamenü"
+
+msgid ""
+"A flexible menu providing formatting options, web bookmarks, search provider "
+"support and fuzzy searching."
+msgstr ""
+"Biçimlendirme seçenekleri, web yer imleri, arama sağlayıcı desteği ve "
+"eşleşik arama sağlayan esnek bir menü."
+
+msgid "Behavior"
+msgstr "Davranış"
+
+msgid "Appearance"
+msgstr "Görünüm"
+
+msgid "Layout and Content"
+msgstr "Yerleşim ve İçerik"
+
+msgid "Search Providers"
+msgstr "Arama Sağlayıcıları"
+
+msgid "No search provider extensions found"
+msgstr "Hiçbir arama sağlayıcı eklentisi bulunamadı"
+
+msgid "Panel"
+msgstr "Panel"
+
+msgid "Menu"
+msgstr "Menü"
+
+msgid "Layout"
+msgstr "Düzen"
+
+msgid "Content"
+msgstr "İçerik"
+
+msgid "Recent files settings"
+msgstr "Son dosya ayarları"
+
+msgid "Open the menu editor"
+msgstr "Menü düzenleyiciyi aç"
+
+msgid "Use a custom icon"
+msgstr "Özel bir simge kullan"
+
+msgid "Use a custom icon in the panel"
+msgstr "Özel bir simge kullan"
+
+msgid "Panel icon"
+msgstr "Panel simgesi"
+
+msgid "Panel text"
+msgstr "Panel metni"
+
+msgid "Text to show beside the panel icon"
+msgstr "Panel simgesinin yanında gösterilecek metin"
+
+msgid "pixels"
+msgstr "piksel"
+
+msgid "Category icon size"
+msgstr "Kategori simge boyutu"
+
+msgid "Applications list icon size"
+msgstr "Uygulama listesi simge boyutu"
+
+msgid "Applications grid icon size"
+msgstr "Uygulama listesi ızgara simge boyutu"
+
+msgid "Keyboard shortcut to open and close the menu"
+msgstr "Menüyü açıp kapatmak için klavye kısayolu"
+
+msgid "Open menu on hover"
+msgstr "Fareyle üzerine gelindiğinde menüyü aç"
+
+msgid "Open the menu when I move my mouse over the panel icon"
+msgstr "Fareyi üstüne getirdiğimde menüyü aç"
+
+msgid "milliseconds"
+msgstr "milisaniye"
+
+msgid "Menu hover delay"
+msgstr "Menü bekleme gecikmesi"
+
+msgid "Use menu animations"
+msgstr "Menü animasyonları kullan"
+
+msgid "Animate the menu on open and close"
+msgstr "Açarken ve kapanırken menü animasyonuna izin ver"
+
+msgid "Activate categories on click"
+msgstr "Kategorileri tıklatarak açın"
+
+msgid "Activate categories on click instead of on hover"
+msgstr "Kategorileri tıklatarak açın"
+
+msgid "Enable autoscrolling"
+msgstr "Uygulama listesinde otomatik kaydırmayı etkinleştir"
+
+msgid "Enable autoscrolling in application list"
+msgstr "Uygulama listesinde otomatik kaydırmayı etkinleştir"
+
+msgid "Show web bookmarks"
+msgstr "Tarayıcı yer imlerini göster"
+
+msgid "Show your browser's web bookmarks in the menu"
+msgstr "Tarayıcınızın web yer işaretlerini menüde gösterin"
+
+msgid "Enable searching of open windows"
+msgstr "Açık pencerelerde aramayı etkinleştir"
+
+msgid "Enable search providers"
+msgstr "Arama sağlayıcılarını etkinleştir"
+
+msgid "Include search provider results in searches"
+msgstr ""
+"Arama sağlayıcısı sonuçlarının menü aramalarına dahil edilip edilmeyeceğini "
+"seçin"
+
+msgid "Example Search Providers"
+msgstr "Arama Sağlayıcıları Eklentileri"
+
+msgid "Startup applications view mode"
+msgstr "Başlangıç uygulamaları görünüm kipi"
+
+msgid "List"
+msgstr "Liste"
+
+msgid "Grid"
+msgstr "Izgara"
+
+msgid "columns"
+msgstr "sütun"
+
+msgid "Number of columns in apps grid"
+msgstr "Uygulama kılavuzundaki sütun sayısı"
+
+msgid "Show bookmarks and places"
+msgstr "Yer imlerini ve yerleri göster"
+
+msgid "Show bookmarks and places category in the menu"
+msgstr "Yer imlerini ve yerleri göster"
+
+msgid "Show application icons"
+msgstr "Uygulama simgelerini göster"
+
+msgid "Show category icons"
+msgstr "Kategori simgelerini göster"
+
+msgid "Show application descriptions under titles"
+msgstr "Uygulama açıklamalarını listede göster"
+
+msgid "Show tooltips"
+msgstr "Araç ipuçlarını göster"
+
+msgid "Tooltip delay"
+msgstr "Araç ipucu gecikmesi"
+
+msgid "Use a custom menu height"
+msgstr "Özel bir menü yüksekliği kullanın"
+
+msgid "px"
+msgstr "piksel"
+
+msgid "Custom menu height"
+msgstr "Özel menü yüksekliği"
+
+msgid "Applications view mode"
+msgstr "Uygulama görüntüleme modu"
+
+msgid "View applications as list or grid"
+msgstr "Uygulamaları liste veya ızgara olarak görüntüleme"
+
+msgid "Application description placement"
+msgstr "Uygulama açıklaması yerleşimi"
+
+msgid "Tooltips"
+msgstr "Araç ipuçları"
+
+msgid "Under titles"
+msgstr "Başlıkların altında"
+
+msgid "None"
+msgstr "Yok"
+
+msgid "Choose where to show application descriptions"
+msgstr "Uygulama açıklamalarının nerede gösterileceğini seçin"
+
+msgid "Session buttons location"
+msgstr "Oturum düğmelerinin konumu"
+
+msgid "Top"
+msgstr "Tepede"
+
+msgid "Bottom"
+msgstr "Alt bölme"
+
+msgid "Left"
+msgstr "Sola"
+
+msgid "Right"
+msgstr "Sağa"
+
+msgid "Choose where to show the session buttons (quit, logout, etc.)"
+msgstr "Oturum düğmelerinin (kapat, çıkış vb.) nerede gösterileceğini seç"
+
+msgid ""
+"\n"
+"Info/tip: Drag on the menu edge to change the menu size.\n"
+msgstr ""
+"\n"
+"Bilgi/ipucu: Menü boyutunu köşeden tutarak değiştirebilirsiniz.\n"
+
+msgid "Add favorites to session buttons"
+msgstr "Oturum düğmelerinin yanına sık kullanılanları ekle"
+
+msgid "Show your favorite app icons next to the session buttons"
+msgstr "Oturum düğmelerinin yanında favori uygulama simgelerinizi gösterin"
+
+msgid ""
+"Show your browser's web bookmarks in the menu.\n"
+"Note: Install package gir1.2-gda-5.0 to read firefox bookmarks."
+msgstr ""
+"Tarayıcının sık kullanılanlarını menüde göster.\n"
+"Not: Firefox sık kullanılanlarını okumak için gir1.2-gda-5.0 paketini kurun."
+
+msgid "Show favorite apps category"
+msgstr "Favori uygulamalar kategorisini göster"
+
+msgid "Show your favorite apps category in the menu"
+msgstr "Favori uygulamalar kategorisini menüde gösterir"
+
+msgid "Show home folder"
+msgstr "Ev dizinini göster"
+
+msgid "Show home folder category in the menu"
+msgstr "Ev dizini kategorisini menüde gösterir"
+
+msgid "Open menu on category:"
+msgstr "Menünün üstünde açılacağı kategori:"
+
+msgid "Always open the menu with this category selected"
+msgstr "Menü daima bu seçilen kategori ile açılır"
+
+#, fuzzy
+msgid "Last used category"
+msgstr "Önceki kategori"
+
+msgid "Autoscroll the application list on mouse hover"
+msgstr "Uygulama listesi üstünde fare ile otomatik kaydır"
+
+msgid "Web search option"
+msgstr "Web arama seçenekleri"
+
+msgid "Google"
+msgstr "Google"
+
+msgid "Bing"
+msgstr "Bing"
+
+msgid "Yahoo"
+msgstr "Yahoo"
+
+msgid "DuckDuckGo"
+msgstr "DuckDuckGo"
+
+msgid "Show an internet search option in search results"
+msgstr "Arama sonuçlarında bir internet arama seçeneği gösterir"
+
+msgid "Show hidden files"
+msgstr "Gizli dosyaları göster"
+
+msgid "Show hidden files in folder view"
+msgstr "Gizli dosyaları dizin görünümünde göster"
+
+msgid "Use a custom icon size"
+msgstr "Özel simge boyutu kullan"
+
+msgid "Use a custom size for the panel icon"
+msgstr "Panel simgesi için özel boyut kullan"
+
+msgid "Panel icon size"
+msgstr "Panel simge boyutu"
+
+msgid "Choose a custom size for the panel icon"
+msgstr "Panel simgesi için özel boyut seçin"
+
+msgid "Session buttons icon size"
+msgstr "Oturum düğmelerinin simge boyutu"
+
+msgid "Use session buttons box style"
+msgstr "Oturum düğmelerini kutu stilinde kullan"
+
+#~ msgid "All Applications"
+#~ msgstr "Tüm Uygulamalar"
+
+#~ msgid "Recent Files"
+#~ msgstr "Son Dosyalar"
+
+#~ msgid "Favorite Apps"
+#~ msgstr "Favorilerim"
+
+#~ msgid "Lock Screen"
+#~ msgstr "Ekranı Kilitle"
+
+#~ msgid "Show recent files"
+#~ msgstr "Son dosyları göster"
+
+#~ msgid "Show recent files category in the menu"
+#~ msgstr "Son dosyalar kategorisini menüden göster"
+
+#~ msgid "Enable emoji search"
+#~ msgstr "Emoji aramayı etkinleştir"
+
+#~ msgid "Show emojis in search results"
+#~ msgstr "Emojileri arama seçeneklerinde gösterir"
+
+#~ msgid "No recent documents"
+#~ msgstr "Yakın tarihli belge yok"
+
+#~ msgid "Remove favorite"
+#~ msgstr "Favorilerden kaldır"
+
+#~ msgid "Failed to launch \"%s\""
+#~ msgstr "Başlatılamadı \"%s\""
+
+#~ msgid "Press this button to customize your privacy settings."
+#~ msgstr "Gizlilik ayarlarınızı özelleştirmek için bu düğmeye basın."
+
+#~ msgid "Press this button to customize your menu entries."
+#~ msgstr "Menü girişlerinizi özelleştirmek için bu düğmeye basın."
+
+#~ msgid "Unchecking this allows the theme to set the icon"
+#~ msgstr "Seçeneğin işaretini kaldırmak, temanın simgeyi ayarlamasını sağlar"
+
+#~ msgid "Icon"
+#~ msgstr "Simge"
+
+#~ msgid "Set the custom menu button icon name"
+#~ msgstr "Menü simge ismini ayarla"
+
+#~ msgid "Enable opening the menu when the mouse enters the applet"
+#~ msgstr ""
+#~ "Fare menü uygulamacığının üstüne geldiğinde menü açılmasını etkinleştir"
+
+#~ msgid "Delay between switching categories"
+#~ msgstr "Kategoriler arası geçişlerdeki gecikme"
+
+#~ msgid ""
+#~ "When enabled, category views are activated on click instead of on hover."
+#~ msgstr "Kategoriler içindeki uygulama listelerine tıklayarak ulaşırsınız."
+
+#~ msgid ""
+#~ "Choose whether or not to enable smooth autoscrolling in the application "
+#~ "list."
+#~ msgstr ""
+#~ "Uygulamada sorunsuz otomatik gezinmeyi etkinleştirip etkinleştirmemesini "
+#~ "seçin."
+
+#~ msgid "Choose whether or not bookmarks are indexed in the menu."
+#~ msgstr "Bilgisayar menüsünde bulunan yer imlerini göster."
+
+#~ msgid "Choose whether or not open windows are indexed in menu searches."
+#~ msgstr ""
+#~ "Açık pencerelerin menü aramalarına dahil edilip edilmeyeceğini seçin."
+
+#~ msgid "Choose whether or not to show bookmarks and places in the menu."
+#~ msgstr ""
+#~ "Menüde yer imlerinin ve yerlerin gösterilip gösterilmeyeceğini seçin."
+
+#~ msgid "Choose whether or not to show icons on applications."
+#~ msgstr "Uygulamalardaki simgelerin gösterilip gösterilmeyeceğini seçin."
+
+#~ msgid "Choose whether or not to show icons on categories."
+#~ msgstr "Kategorilerdeki simgelerin gösterilip gösterilmeyeceğini seçin."
+
+#~ msgid ""
+#~ "Choose whether or not to show the application description on the "
+#~ "application buttons."
+#~ msgstr "Listede uygulama açıklamasının gösterilip gösterilmeyeceğini seçin."
+
+#~ msgid ""
+#~ "When enabled, tooltips containing the item's name or description is shown "
+#~ "when hovered over."
+#~ msgstr ""
+#~ "Etkinleştirildiğinde, uygulamaların açıklamasını içeren araç ipuçları "
+#~ "gösterilir."
+
+#~ msgid ""
+#~ "The delay time in milliseconds for tooltips when hovering over a menu "
+#~ "item."
+#~ msgstr "Araç ipuçları için milisaniye cinsinden gecikme süresi."
+
+#~ msgid "Please provide your password to uninstall this application"
+#~ msgstr "Bu uygulamayı kaldırmak için lütfen şifrenizi girin"
+
+#~ msgid "Enable filesystem path entry in search box"
+#~ msgstr "Arama kutusuna dosya sistemi yolu girişini etkinleştir"
+
+#~ msgid "Allows path entry in the menu search box."
+#~ msgstr "Menü arama kutusuna yol girişini sağlar."
+
+#~ msgid ""
+#~ "Choose where application descriptions will be placed, or select \"None\" "
+#~ "to disable."
+#~ msgstr ""
+#~ "Uygulama açıklamalarının nereye yerleştirileceğini veya devre dışı "
+#~ "bırakmak için \"Yok\" u seç."
+
+#~ msgid "Category first seen when the menu is opened"
+#~ msgstr "Kategori ilk menü açıldığında görülür"

@@ -19,6 +19,7 @@ const consts_1 = require("./consts");
 const visualcrossing_1 = require("./visualcrossing");
 const climacellV4_1 = require("./climacellV4");
 const danishMI_1 = require("./danishMI");
+const environmentalCanada_1 = require("./environmentalCanada");
 const { TextIconApplet, AllowedLayout, MenuItem } = imports.ui.applet;
 const { spawnCommandLine } = imports.misc.util;
 const { IconType, Side } = imports.gi.St;
@@ -342,6 +343,10 @@ class WeatherApplet extends TextIconApplet {
             case "DanishMI":
                 if (currentName != "DanishMI" || force)
                     this.provider = new danishMI_1.DanishMI(this);
+                break;
+            case "EnvCanada":
+                if (currentName != "EnvCanada" || force)
+                    this.provider = new environmentalCanada_1.EnvCanada(this);
                 break;
             default:
                 return null;

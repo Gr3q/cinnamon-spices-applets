@@ -24,6 +24,7 @@ import { APPLET_ICON, REFRESH_ICON } from "./consts";
 import { VisualCrossing } from "./visualcrossing";
 import { ClimacellV4 } from "./climacellV4";
 import { DanishMI } from "./danishMI";
+import { EnvCanada } from "./environmentalCanada";
 
 const { TextIconApplet, AllowedLayout, MenuItem } = imports.ui.applet;
 const { spawnCommandLine } = imports.misc.util;
@@ -446,6 +447,9 @@ export class WeatherApplet extends TextIconApplet {
 				break;
 			case "DanishMI":
 				if (currentName != "DanishMI" || force) this.provider = new DanishMI(this);
+				break;
+			case "EnvCanada":
+				if (currentName != "EnvCanada" || force) this.provider = new EnvCanada(this);
 				break;
 			default:
 				return null;

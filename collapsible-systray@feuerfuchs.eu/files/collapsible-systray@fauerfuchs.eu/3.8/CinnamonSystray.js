@@ -154,3 +154,4 @@ function main(metadata, orientation, panel_height, instance_id) {
     return new CinnamonSystrayApplet(orientation, panel_height, instance_id);
 }
 exports.main = main;
+//# sourceMappingURL=CinnamonSystray.js.map

@@ -655,3 +655,4 @@ exports.CollapsibleSystrayApplet = CollapsibleSystrayApplet;
 function main(metadata, orientation, panel_height, instance_id) {
     return new CollapsibleSystrayApplet(orientation, panel_height, instance_id);
 }
+//# sourceMappingURL=applet.js.map

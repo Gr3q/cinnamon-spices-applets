@@ -32,3 +32,4 @@ class CSRemovableSwitchMenuItem extends PopupSwitchMenuItem {
     }
 }
 exports.CSRemovableSwitchMenuItem = CSRemovableSwitchMenuItem;
+//# sourceMappingURL=CSRemovableSwitchMenuItem.js.map

@@ -1,6 +1,4 @@
-const Lang      = imports.lang;
 const { Button, Icon, IconType, BoxLayout, Align }        = imports.gi.St;
-const Mainloop  = imports.mainloop;
 const { PopupSwitchMenuItem } = imports.ui.popupMenu;
 
 // ------------------------------------------------------------------------------------------------------

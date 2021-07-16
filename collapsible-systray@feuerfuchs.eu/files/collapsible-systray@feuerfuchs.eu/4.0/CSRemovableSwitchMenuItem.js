@@ -1,9 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CSRemovableSwitchMenuItem = void 0;
-const Lang = imports.lang;
 const { Button, Icon, IconType, BoxLayout, Align } = imports.gi.St;
-const Mainloop = imports.mainloop;
 const { PopupSwitchMenuItem } = imports.ui.popupMenu;
 class CSRemovableSwitchMenuItem extends PopupSwitchMenuItem {
     constructor(text, active, params) {

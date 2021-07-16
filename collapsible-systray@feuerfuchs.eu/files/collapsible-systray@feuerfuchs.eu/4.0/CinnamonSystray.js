@@ -36,8 +36,6 @@ class CinnamonSystrayApplet extends Applet {
         super(orientation, panel_height, instance_id);
         this.menuFactory = new IndicatorMenuFactory();
         this.menuManager = new PopupMenuManager(this);
-        this._signalAdded = 0;
-        this._signalRemoved = 0;
         this.setAllowedLayout(AllowedLayout.BOTH);
         this.actor.remove_style_class_name('applet-box');
         this.actor.set_style_class_name('systray');
@@ -58,10 +56,7 @@ class CinnamonSystrayApplet extends Applet {
         this.actor.add_actor(this.manager_container);
         this.manager_container.show();
     }
-    _addIndicatorSupport() {
-    }
-    on_applet_clicked(event) {
-    }
+    on_applet_clicked(event) { }
     on_orientation_changed(neworientation) {
         if (neworientation == Side.TOP || neworientation == Side.BOTTOM) {
             this.manager.set_orientation(Orientation.HORIZONTAL);
@@ -84,7 +79,6 @@ class CinnamonSystrayApplet extends Applet {
         this._signalManager.connect(Main.statusIconDispatcher, 'status-icon-removed', this._onTrayIconRemoved, this);
         this._signalManager.connect(Main.statusIconDispatcher, 'before-redisplay', this._onBeforeRedisplay, this);
         this._signalManager.connect(Main.systrayManager, "changed", Main.statusIconDispatcher.redisplay, Main.statusIconDispatcher);
-        this._addIndicatorSupport();
         if (global.trayReloading) {
             global.trayReloading = false;
             Main.statusIconDispatcher.redisplay();

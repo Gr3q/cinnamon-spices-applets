@@ -22,27 +22,9 @@ var Menu;
     Menu[Menu["ACTIVE_APPLICATIONS"] = 0] = "ACTIVE_APPLICATIONS";
     Menu[Menu["INACTIVE_APPLICATIONS"] = 1] = "INACTIVE_APPLICATIONS";
 })(Menu || (Menu = {}));
-class PopupExtendedSwitchMenuItem extends PopupSwitchMenuItem {
-}
-class IconContainer {
-    constructor(direction) {
-        this.actor = new BoxLayout({ vertical: direction == Direction.VERTICAL });
-        this.actor.hadjustment = new Adjustment();
-        this.actor.vadjustment = new Adjustment();
-        this.actor.connect('queue-redraw', () => {
-            if (direction == Direction.HORIZONTAL) {
-                this.actor.hadjustment.set_value(this.actor.hadjustment.upper);
-            }
-            else {
-                this.actor.vadjustment.set_value(this.actor.vadjustment.upper);
-            }
-        });
-    }
-}
 class CollapsibleSystrayApplet extends CinnamonSystray_1.CinnamonSystrayApplet {
     constructor(orientation, panel_height, instance_id) {
         super(orientation, panel_height, instance_id);
-        this.Direction = {};
         this.collapseBtn = new CSCollapseBtn_1.CSCollapseBtn(this);
         this._signalManager = new SignalManager(null);
         this._hovering = false;
@@ -514,6 +496,7 @@ class CollapsibleSystrayApplet extends CinnamonSystray_1.CinnamonSystrayApplet {
         });
     }
     _insertStatusItem(role, icon) {
+        global.log(icon);
         if (icon.obsolete == true) {
             return;
         }
@@ -652,6 +635,23 @@ class CollapsibleSystrayApplet extends CinnamonSystray_1.CinnamonSystrayApplet {
     }
 }
 exports.CollapsibleSystrayApplet = CollapsibleSystrayApplet;
+class PopupExtendedSwitchMenuItem extends PopupSwitchMenuItem {
+}
+class IconContainer {
+    constructor(direction) {
+        this.actor = new BoxLayout({ vertical: direction == Direction.VERTICAL });
+        this.actor.hadjustment = new Adjustment();
+        this.actor.vadjustment = new Adjustment();
+        this.actor.connect('queue-redraw', () => {
+            if (direction == Direction.HORIZONTAL) {
+                this.actor.hadjustment.set_value(this.actor.hadjustment.upper);
+            }
+            else {
+                this.actor.vadjustment.set_value(this.actor.vadjustment.upper);
+            }
+        });
+    }
+}
 function main(metadata, orientation, panel_height, instance_id) {
     return new CollapsibleSystrayApplet(orientation, panel_height, instance_id);
 }

@@ -5,7 +5,6 @@ const Util_1 = require("./Util");
 const { FileIcon, File } = imports.gi.Gio;
 const { Button, Icon, IconType } = imports.gi.St;
 const { PanelItemTooltip } = imports.ui.tooltips;
-const Applet = imports.ui.applet;
 var State;
 (function (State) {
     State[State["EXPANDED"] = 0] = "EXPANDED";

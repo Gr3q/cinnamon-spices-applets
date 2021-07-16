@@ -46,11 +46,8 @@ export class CinnamonSystrayApplet extends Applet {
 	icon_size: number;
 	manager: imports.gi.Clutter.BoxLayout;
 	manager_container: imports.gi.Clutter.Actor;
-	//private _shellIndicators: any[] = [];
 	menuFactory = new IndicatorMenuFactory();
 	menuManager = new PopupMenuManager(this);
-	private _signalAdded = 0;
-	private _signalRemoved = 0;
 
 	signalAdded: number;
 	signalRemoved: number;
@@ -63,7 +60,6 @@ export class CinnamonSystrayApplet extends Applet {
 
         this.actor.remove_style_class_name('applet-box');
         this.actor.set_style_class_name('systray');
-        //this.actor.set_important(true);  // ensure we get class details from the default theme if not present
 
         this._signalManager = new SignalManager(null);
         let manager;
@@ -84,114 +80,7 @@ export class CinnamonSystrayApplet extends Applet {
         this.manager_container.show();
     }
 
-    _addIndicatorSupport() {
-        /*let manager = Main.indicatorManager;
-		if (!manager) return;
-
-        // Blacklist some of the icons
-        // quassel: The proper icon in Quassel is "QuasselIRC",
-        // this is a fallback icon which Quassel launches when it fails to detect
-        // our indicator support (i.e. when Cinnamon is restarted for instance)
-        // The problem is.. Quassel doesn't kill that icon when it creates QuasselIRC again..
-        manager.insertInBlackList("quassel");
-
-        let currentIndicators = manager.getIndicatorIds();
-        for (let pos in currentIndicators) {
-            if (!manager.isInBlackList(currentIndicators[pos])) {
-                let appIndicator = manager.getIndicatorById(currentIndicators[pos]);
-                this._onIndicatorAdded(manager, appIndicator);
-            }
-        }
-        if (this._signalAdded == 0)
-            this._signalAdded = manager.connect('indicator-added', Lang.bind(this, this._onIndicatorAdded));
-        if (this._signalRemoved == 0)
-            this._signalRemoved = manager.connect('indicator-removed', Lang.bind(this, this._onIndicatorRemoved));*/
-    }
-
-    /*_removeIndicatorSupport() {
-        if (this.signalAdded) {
-            Main.indicatorManager.disconnect(this.signalAdded);
-            this.signalAdded = 0;
-        }
-        if (this.signalRemoved) {
-            Main.indicatorManager.disconnect(this.signalRemoved);
-            this.signalRemoved = 0;
-        }
-
-        for (let i = 0; i < this._shellIndicators.length; i++) {
-            this._shellIndicators[i].instance.destroy();
-        }
-
-        this._shellIndicators = [];
-
-    }*/
-
-    /*_onIndicatorAdded(manager: any, appIndicator: any) {
-        let inList = false;
-
-        for (let i = 0; i < this._shellIndicators.length; i++) {
-            if (this._shellIndicators[i].id == appIndicator.id) {
-                inList = true;
-                break;
-            }
-        }
-
-        if (!inList) {
-            let indicatorActor = appIndicator.getActor(this.icon_size);
-
-            this._shellIndicators.push({
-                id: appIndicator.id,
-                instance: indicatorActor
-            });
-            this._signalManager.connect(indicatorActor.actor, 'destroy', this._onIndicatorIconDestroy, this);
-            this._signalManager.connect(indicatorActor.actor, 'enter-event', this._onEnterEvent, this);
-            this._signalManager.connect(indicatorActor.actor, 'leave-event', this._onLeaveEvent, this);
-
-            this.manager_container.add_actor(indicatorActor.actor);
-
-            appIndicator.createMenuClientAsync((client: imports.ui.popupMenu.PopupMenuFactory) => {
-                if (client != null) {
-                    let newMenu = client.getShellMenu(null);
-                    if (!newMenu) {
-                        newMenu = this.menuFactory.buildShellMenu(client, indicatorActor, this.orientation);
-                        this.menuManager.addMenu(newMenu);
-                    }
-                    indicatorActor.setMenu(newMenu);
-                }
-            });
-        }
-    }*/
-
-    /*_onEnterEvent(actor: imports.gi.Clutter.Actor, event: imports.gi.Clutter.Event) {
-        
-		this.set_applet_tooltip(actor._delegate.getToolTip());
-    }
-
-    _onLeaveEvent(actor: imports.gi.Clutter.Actor, event: imports.gi.Clutter.Event) {
-        this.set_applet_tooltip("");
-    }
-
-    _onIndicatorIconDestroy(actor: imports.gi.Clutter.Actor) {
-        for (let i = 0; i < this._shellIndicators.length; i++) {
-            if (this._shellIndicators[i].instance.actor == actor) {
-                this._shellIndicators.splice(this._shellIndicators.indexOf(this._shellIndicators[i]), 1);
-                break;
-            }
-        }
-    }*/
-
-    /*_onIndicatorRemoved(manager: any, appIndicator: any) {
-        for (let i = 0; i < this._shellIndicators.length; i++) {
-            if (this._shellIndicators[i].id === appIndicator.id) {
-                this._shellIndicators[i].instance.destroy();
-                this._shellIndicators.splice(this._shellIndicators.indexOf(this._shellIndicators[i]), 1);
-                break;
-            }
-        }
-    }*/
-
-    override on_applet_clicked(event: imports.gi.Clutter.Event) {
-    }
+    override on_applet_clicked(event: imports.gi.Clutter.Event) { }
 
     override on_orientation_changed(neworientation: imports.gi.St.Side) {
         if (neworientation == Side.TOP || neworientation == Side.BOTTOM) {
@@ -219,7 +108,6 @@ export class CinnamonSystrayApplet extends Applet {
         this._signalManager.connect(Main.statusIconDispatcher, 'status-icon-removed', this._onTrayIconRemoved, this);
         this._signalManager.connect(Main.statusIconDispatcher, 'before-redisplay', this._onBeforeRedisplay, this);
         this._signalManager.connect(Main.systrayManager, "changed", Main.statusIconDispatcher.redisplay, Main.statusIconDispatcher);
-        this._addIndicatorSupport();
 
         if (global.trayReloading) {
             global.trayReloading = false;
@@ -230,16 +118,9 @@ export class CinnamonSystrayApplet extends Applet {
     override on_panel_icon_size_changed(size: number) {
         this.icon_size = size * global.ui_scale;
         Main.statusIconDispatcher.redisplay();
-
-        /*for (let i = 0; i < this._shellIndicators.length; i++) {
-            let indicator = Main.indicatorManager.getIndicatorById(this._shellIndicators[i].id);
-            if (indicator) {
-                this._shellIndicators[i].instance.setSize(this.icon_size);
-            }
-        }*/
     }
 
-    _onBeforeRedisplay() {
+    protected _onBeforeRedisplay() {
         // Mark all icons as obsolete
         // There might still be pending delayed operations to insert/resize of them
         // And that would crash Cinnamon
@@ -254,7 +135,7 @@ export class CinnamonSystrayApplet extends Applet {
         }
     }
 
-    _onTrayIconAdded(o: any, icon: imports.gi.St.Icon, role: string) {
+    protected _onTrayIconAdded(o: any, icon: imports.gi.Cinnamon.CinnamonTrayIcon, role: string) {
         try {
             let hiddenIcons = Main.systrayManager.getRoles();
 
@@ -276,7 +157,7 @@ export class CinnamonSystrayApplet extends Applet {
         }
     }
 
-    _onTrayIconRemoved(o: any, icon: imports.gi.St.Icon) {
+    protected _onTrayIconRemoved(o: any, icon: imports.gi.Cinnamon.CinnamonTrayIcon) {
         if (icon.get_parent() === this.manager_container) {
             this.manager_container.remove_child(icon);
         }
@@ -284,7 +165,7 @@ export class CinnamonSystrayApplet extends Applet {
         icon.destroy();
     }
 
-    _insertStatusItem(role: string, icon: imports.gi.St.Icon) {
+    protected _insertStatusItem(role: string, icon: imports.gi.Cinnamon.CinnamonTrayIcon) {
         if (icon.is_finalized()) {
             return;
         }
@@ -300,7 +181,7 @@ export class CinnamonSystrayApplet extends Applet {
         }
     }
 
-    _resizeStatusItem(role: string, icon: imports.gi.St.Icon) {
+    protected _resizeStatusItem(role: string, icon: imports.gi.Cinnamon.CinnamonTrayIcon) {
         if (NO_RESIZE_ROLES.indexOf(role) > -1) {
             global.log("Not resizing " + role + " as it's known to be buggy (" + icon.get_width() + "x" + icon.get_height() + "px)");
         } else {

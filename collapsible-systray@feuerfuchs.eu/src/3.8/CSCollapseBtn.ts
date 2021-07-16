@@ -4,7 +4,6 @@ import { CollapsibleSystrayApplet } from "./applet";
 const { FileIcon, File }                                = imports.gi.Gio;
 const { Button, Icon, IconType }                                 = imports.gi.St;
 const { PanelItemTooltip }                           = imports.ui.tooltips;
-const Applet                             = imports.ui.applet;
 
 // ------------------------------------------------------------------------------------------------------
 

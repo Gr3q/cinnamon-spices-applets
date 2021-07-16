@@ -5,13 +5,35 @@ import { _ }  from "./Util";
 
 const uuid = "collapsible-systray@feuerfuchs.eu";
 
-const { BoxLayout, Side, Adjustment, IconType, Bin }                        = imports.gi.St;
-const { statusIconDispatcher }                      = imports.ui.main;
-const { SignalManager }             = imports.misc.signalManager;
-const { AppletSettings, BindingDirection }                  = imports.ui.settings;
-const { removeTweens, addTween }                   = imports.ui.tweener;
+const { 
+	BoxLayout,
+	Side,
+	Adjustment,
+	IconType,
+	Bin
+} = imports.gi.St;
 
-const { PopupSubMenuMenuItem, PopupSeparatorMenuItem, PopupSwitchMenuItem }                 = imports.ui.popupMenu;
+const { 
+	statusIconDispatcher
+} = imports.ui.main;
+
+const { 
+	SignalManager 
+} = imports.misc.signalManager;
+
+const {
+	AppletSettings,
+	BindingDirection
+} = imports.ui.settings;
+const {
+	removeTweens,
+	addTween } = imports.ui.tweener;
+
+const {
+	PopupSubMenuMenuItem,
+	PopupSeparatorMenuItem,
+	PopupSwitchMenuItem
+} = imports.ui.popupMenu;
 
 // ------------------------------------------------------------------------------------------------------
 
@@ -25,88 +47,7 @@ enum Menu {
 	INACTIVE_APPLICATIONS = 1
 }
 
-type IDMapping = {
-	[key: string]: any;
-}
-
-type IconVisibility = {
-	[key: string]: boolean;
-}
-
-type RegisteredAppIcons = {
-	[key: string]: IconBox[];
-}
-
-type ActiveMenuItems = {
-	[key: string]: PopupExtendedSwitchMenuItem;
-}
-
-type InactiveMenuItems = {
-	[key: string]: CSRemovableSwitchMenuItem;
-}
-
-interface TweenParams {
-	time:       number,
-	transition: string,
-	rounded:    boolean,
-	onComplete: () => void
-}
-
-class PopupExtendedSwitchMenuItem extends PopupSwitchMenuItem {
-	appID?: string;
-}
-
-interface TweenParams {
-	time:       number,
-	transition: string,
-	rounded:    boolean,
-	onComplete: () => void,
-	height?: number;
-	width?: number;
-}
-
-interface IconBox extends imports.gi.St.BoxLayout { 
-	isIndicator: boolean;
-	csDisable: () => void;
-	csEnableAfter: () => void;
-	csEnable: () => void;
-	appID: string;
-	icon: any;
-	setVertical: (vertical: boolean) => void;
-}
-
-interface RestrictedBoxLayout extends imports.gi.St.BoxLayout {
-	get_children(): IconBox[];
-}
-
-class IconContainer {
-	actor: RestrictedBoxLayout;
-	direction: Direction
-	tweenParams: TweenParams;
-
-	constructor(direction: Direction) {
-		this.actor = new BoxLayout({ vertical: direction == Direction.VERTICAL }) as RestrictedBoxLayout;
-
-		// Add horizontal scrolling and scroll to the end on each redraw so that it looks like the
-        // collapse button "eats" the icons on collapse
-        this.actor.hadjustment = new Adjustment();
-        this.actor.vadjustment = new Adjustment();
-        this.actor.connect('queue-redraw', () => {
-            if (direction == Direction.HORIZONTAL) {
-                this.actor.hadjustment.set_value(this.actor.hadjustment.upper);
-            } else {
-                this.actor.vadjustment.set_value(this.actor.vadjustment.upper);
-            }
-        });
-	}
-}
-
 export class CollapsibleSystrayApplet extends CinnamonSystrayApplet {
-
-
-	Direction = {
-		
-	}
 
 	collapseBtn = new CSCollapseBtn(this);
 	_initialCollapseTimerID: number;
@@ -122,8 +63,11 @@ export class CollapsibleSystrayApplet extends CinnamonSystrayApplet {
 	private _animating          = false;
 	private _iconsAreHidden     = false;
 
+	/** Root Container */
 	private mainLayout: imports.gi.St.BoxLayout;
+	/** Container for hidden icons */
 	private hiddenIconsContainer: IconContainer;
+	/** Container for shown icons */
 	private shownIconsContainer: IconContainer;
 
 	cmitemActiveItems   = new PopupSubMenuMenuItem(_("Active applications"));
@@ -190,24 +134,12 @@ export class CollapsibleSystrayApplet extends CinnamonSystrayApplet {
 		this._direction = (orientation == Side.TOP || orientation == Side.BOTTOM) ? Direction.HORIZONTAL : Direction.VERTICAL;
 
 
-        //
-        // Root container
-
         this.mainLayout = new BoxLayout({ vertical: this._direction == Direction.VERTICAL });
-
-        //
-        // Container for hidden icons
-
         this.hiddenIconsContainer = new IconContainer(this._direction);
-
-        //
-        // Container for shown icons
-
         this.shownIconsContainer = new IconContainer(this._direction);
 
         //
         // Assemble layout
-
         this.mainLayout.add_actor(this.collapseBtn.actor);
         this.mainLayout.add_actor(this.shownIconsContainer.actor);
         this.actor.add_actor(this.mainLayout);
@@ -800,7 +732,8 @@ export class CollapsibleSystrayApplet extends CinnamonSystrayApplet {
      * Remove icon from tray, wrap it in an applet-box and re-add it. This way,
      * tray icons are displayed like applets and thus integrate nicely in the panel.
      */
-    override _insertStatusItem(role: string, icon: any) {
+    override _insertStatusItem(role: string, icon: imports.gi.Cinnamon.CinnamonTrayIcon) {
+		global.log(icon);
         if (icon.obsolete == true) {
             return;
         }
@@ -887,76 +820,6 @@ export class CollapsibleSystrayApplet extends CinnamonSystrayApplet {
     }
 
     /*
-     * An AppIndicator has been added; prepare its actor and register the icon
-     */
-    /*_onIndicatorAdded(manager: any, appIndicator: any) {
-        global.log("[" + uuid + "] Event: _onIndicatorAdded - " + appIndicator.id);
-
-        //super._onIndicatorAdded(manager, appIndicator);
-
-        let id = appIndicator.id;
-
-        if (appIndicator.id.trim() == "")
-        {
-            global.logError("[" + uuid + "] Indicator ID is empty. It's probably Dropbox being \"special\" once again.");
-            id = "[empty name]";
-        }
-
-        for (let i = 0; i < this._shellIndicators.length; i++) {
-            if (this._shellIndicators[i].id == appIndicator.id) {
-                const iconActor = this._shellIndicators[i].instance.actor;
-    
-                this.manager_container.remove_actor(iconActor);
-    
-                const iconWrap = new BoxLayout({ style_class: 'applet-box', reactive: true, track_hover: !this.noHoverForTrayIcons });
-                iconWrap.add_style_class_name('ff-collapsible-systray__status-icon');
-                iconWrap.add_actor(iconActor);
-                if (this._direction == Direction.HORIZONTAL) {
-                    iconWrap.set_style('padding-left: ' + this.trayIconPadding + 'px; padding-right: ' + this.trayIconPadding + 'px;');
-                } else {
-                    iconWrap.set_style('padding-top: ' + this.trayIconPadding + 'px; padding-bottom: ' + this.trayIconPadding + 'px;');
-                }
-                iconWrap.isIndicator = true;
-                iconWrap.icon        = iconActor;
-                iconWrap.setVertical = function(vertical) {
-                    iconWrap.set_vertical(vertical);
-                    if (vertical) {
-                        iconWrap.add_style_class_name('vertical');
-                    } else {
-                        iconWrap.remove_style_class_name('vertical');
-                    }
-                }
-                iconWrap.setVertical(this._direction == Direction.VERTICAL);
-
-                iconWrap.csDisable = () => {
-                    if (this.animationSupport) {
-                        iconActor.set_reactive(false);
-                    }
-                });
-                iconWrap.csEnable = () => {
-                    if (this.animationSupport) {
-                        iconActor.set_reactive(true);
-                    }
-                };
-                iconWrap.csEnableAfter = () => { }
-
-                iconWrap.connect('button-press-event', (actor, e) => { return true; });
-                iconWrap.connect('button-release-event', (actor, e) => {
-                    icon.click(e);
-                });
-
-                iconActor.connect('destroy', () => {
-                    this._unregisterAppIcon(id, iconActor);
-                });
-    
-                this._registerAppIcon(id, iconWrap);
-
-                return;
-            }
-        }
-    }*/
-
-    /*
      * Patching icon resizing
      */
     override on_panel_icon_size_changed(size: number) {
@@ -964,13 +827,6 @@ export class CollapsibleSystrayApplet extends CinnamonSystrayApplet {
 
         this.icon_size = size;
         statusIconDispatcher.redisplay();
-
-        /*for (let i = 0; i < this._shellIndicators.length; i++) {
-            let indicator = Main.indicatorManager.getIndicatorById(this._shellIndicators[i].id);
-            if (indicator) {
-                this._shellIndicators[i].instance.setSize(this.icon_size);
-            }
-        }*/
     }
 
     /*
@@ -1058,6 +914,78 @@ export class CollapsibleSystrayApplet extends CinnamonSystrayApplet {
             //Note: dropbox doesn't scale, even though we resize it...
         }
     }
+}
+
+//
+// Mapped Types
+
+type IconVisibility = {
+	[key: string]: boolean;
+}
+
+type RegisteredAppIcons = {
+	[key: string]: IconBox[];
+}
+
+type ActiveMenuItems = {
+	[key: string]: PopupExtendedSwitchMenuItem;
+}
+
+type InactiveMenuItems = {
+	[key: string]: CSRemovableSwitchMenuItem;
+}
+
+//
+// Artificial extension of BoxLayouts
+interface IconBox extends imports.gi.St.BoxLayout { 
+	isIndicator: boolean;
+	csDisable: () => void;
+	csEnableAfter: () => void;
+	csEnable: () => void;
+	appID: string;
+	icon: any;
+	setVertical: (vertical: boolean) => void;
+}
+
+interface RestrictedBoxLayout extends imports.gi.St.BoxLayout {
+	get_children(): IconBox[];
+}
+
+//
+// Extended Classes
+class PopupExtendedSwitchMenuItem extends PopupSwitchMenuItem {
+	appID?: string;
+}
+
+class IconContainer {
+	actor: RestrictedBoxLayout;
+	direction: Direction
+	tweenParams: TweenParams;
+
+	constructor(direction: Direction) {
+		this.actor = new BoxLayout({ vertical: direction == Direction.VERTICAL }) as RestrictedBoxLayout;
+
+		// Add horizontal scrolling and scroll to the end on each redraw so that it looks like the
+        // collapse button "eats" the icons on collapse
+        this.actor.hadjustment = new Adjustment();
+        this.actor.vadjustment = new Adjustment();
+        this.actor.connect('queue-redraw', () => {
+            if (direction == Direction.HORIZONTAL) {
+                this.actor.hadjustment.set_value(this.actor.hadjustment.upper);
+            } else {
+                this.actor.vadjustment.set_value(this.actor.vadjustment.upper);
+            }
+        });
+	}
+}
+
+interface TweenParams {
+	time:       number,
+	transition: string,
+	rounded:    boolean,
+	onComplete: () => void,
+	height?: number;
+	width?: number;
 }
 
 function main(metadata: any, orientation: imports.gi.St.Side, panel_height: number, instance_id: number) {

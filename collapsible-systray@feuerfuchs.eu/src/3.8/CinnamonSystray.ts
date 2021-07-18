@@ -135,7 +135,7 @@ export class CinnamonSystrayApplet extends Applet {
         }
     }
 
-    protected _onTrayIconAdded(o: any, icon: imports.gi.Cinnamon.CinnamonTrayIcon, role: string) {
+    protected _onTrayIconAdded(o: any, icon: imports.gi.Cinnamon.TrayIcon, role: string) {
         try {
             let hiddenIcons = Main.systrayManager.getRoles();
 
@@ -157,7 +157,7 @@ export class CinnamonSystrayApplet extends Applet {
         }
     }
 
-    protected _onTrayIconRemoved(o: any, icon: imports.gi.Cinnamon.CinnamonTrayIcon) {
+    protected _onTrayIconRemoved(o: any, icon: imports.gi.Cinnamon.TrayIcon) {
         if (icon.get_parent() === this.manager_container) {
             this.manager_container.remove_child(icon);
         }
@@ -165,7 +165,7 @@ export class CinnamonSystrayApplet extends Applet {
         icon.destroy();
     }
 
-    protected _insertStatusItem(role: string, icon: imports.gi.Cinnamon.CinnamonTrayIcon) {
+    protected _insertStatusItem(role: string, icon: imports.gi.Cinnamon.TrayIcon) {
         if (icon.is_finalized()) {
             return;
         }
@@ -181,7 +181,7 @@ export class CinnamonSystrayApplet extends Applet {
         }
     }
 
-    protected _resizeStatusItem(role: string, icon: imports.gi.Cinnamon.CinnamonTrayIcon) {
+    protected _resizeStatusItem(role: string, icon: imports.gi.Cinnamon.TrayIcon) {
         if (NO_RESIZE_ROLES.indexOf(role) > -1) {
             global.log("Not resizing " + role + " as it's known to be buggy (" + icon.get_width() + "x" + icon.get_height() + "px)");
         } else {

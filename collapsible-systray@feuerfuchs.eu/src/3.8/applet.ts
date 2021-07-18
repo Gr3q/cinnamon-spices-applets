@@ -732,7 +732,7 @@ export class CollapsibleSystrayApplet extends CinnamonSystrayApplet {
      * Remove icon from tray, wrap it in an applet-box and re-add it. This way,
      * tray icons are displayed like applets and thus integrate nicely in the panel.
      */
-    override _insertStatusItem(role: string, icon: imports.gi.Cinnamon.CinnamonTrayIcon) {
+    override _insertStatusItem(role: string, icon: imports.gi.Cinnamon.TrayIcon) {
         if (icon.obsolete == true) {
             return;
         }
@@ -943,7 +943,7 @@ interface IconBox extends imports.gi.St.BoxLayout {
 	csEnableAfter?: () => void;
 	csEnable?: () => void;
 	appID?: string;
-	icon?: imports.gi.Cinnamon.CinnamonTrayIcon;
+	icon?: imports.gi.Cinnamon.TrayIcon;
 	setVertical?: (vertical: boolean) => void;
 }
 

@@ -733,7 +733,6 @@ export class CollapsibleSystrayApplet extends CinnamonSystrayApplet {
      * tray icons are displayed like applets and thus integrate nicely in the panel.
      */
     override _insertStatusItem(role: string, icon: imports.gi.Cinnamon.CinnamonTrayIcon) {
-		global.log(icon);
         if (icon.obsolete == true) {
             return;
         }
@@ -747,7 +746,8 @@ export class CollapsibleSystrayApplet extends CinnamonSystrayApplet {
 
         this.manager_container.remove_child(icon);
 
-        const iconWrap        = new BoxLayout({ style_class: 'applet-box', reactive: true, track_hover: !this.noHoverForTrayIcons }) as IconBox;
+		// Cast to IconBox so we can safely extend BoxLayout
+        const iconWrap        = <IconBox>new BoxLayout({ style_class: 'applet-box', reactive: true, track_hover: !this.noHoverForTrayIcons });
         const iconWrapContent = new Bin({ child: icon });
 
         iconWrap.add_style_class_name('ff-collapsible-systray__status-icon');
@@ -938,13 +938,13 @@ type InactiveMenuItems = {
 //
 // Artificial extension of BoxLayouts
 interface IconBox extends imports.gi.St.BoxLayout { 
-	isIndicator: boolean;
-	csDisable: () => void;
-	csEnableAfter: () => void;
-	csEnable: () => void;
-	appID: string;
-	icon: any;
-	setVertical: (vertical: boolean) => void;
+	isIndicator?: boolean;
+	csDisable?: () => void;
+	csEnableAfter?: () => void;
+	csEnable?: () => void;
+	appID?: string;
+	icon?: imports.gi.Cinnamon.CinnamonTrayIcon;
+	setVertical?: (vertical: boolean) => void;
 }
 
 interface RestrictedBoxLayout extends imports.gi.St.BoxLayout {

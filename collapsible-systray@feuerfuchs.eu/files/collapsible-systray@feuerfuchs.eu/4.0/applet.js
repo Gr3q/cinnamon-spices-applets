@@ -496,7 +496,6 @@ class CollapsibleSystrayApplet extends CinnamonSystray_1.CinnamonSystrayApplet {
         });
     }
     _insertStatusItem(role, icon) {
-        global.log(icon);
         if (icon.obsolete == true) {
             return;
         }

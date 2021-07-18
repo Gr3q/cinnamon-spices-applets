@@ -35,7 +35,7 @@ declare namespace imports.gi.Cinnamon {
 		public natural_size: number
 	}
 
-	class CinnamonEmbeddedWindow {
+	class CinnamonEmbeddedWindow extends Gtk.Window {
 		show(): void;
 		hide(): void;
 	}

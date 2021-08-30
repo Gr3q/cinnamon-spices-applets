@@ -186,11 +186,43 @@ var NON_SETTING_TYPES = {
     }
 };
 
-function key_not_found_error(key_name, uuid) {
+function key_not_found_error(key_name: string, uuid: string): void {
     global.logError(`Could not find setting key '${key_name}' for xlet ${uuid}`);
 }
 
-function has_required_fields(props, key) {
+interface Props {
+    type: SettingsTypes | NonSettingsTypes;
+}
+
+type SettingsTypes = 
+    "checkbox" |
+    "switch" |
+    "entry" |
+    "textview" |
+    "colorchooser" |
+    "radiogroup" |
+    "filechooser" |
+    "iconfilechooser" |
+    "soundfilechooser" |
+    "fontchooser" |
+    "combobox" |
+    "tween" |
+    "effect" |
+    "keybinding" |
+    "spinbutton" |
+    "scale" |
+    "generic" |
+    "datechooser" |
+    "timechooser" |
+    "list" ;
+
+type NonSettingsTypes = 
+    "header" |
+    "separator" |
+    "button" |
+    "label";
+
+function has_required_fields(props: Props, key: string) {
     let type = props.type;
     let typeDef;
 

@@ -34,7 +34,8 @@ export type Services =
 	"Met Office UK" |
 	"US Weather" |
 	"Visual Crossing" |
-	"DanishMI";
+	"DanishMI" |
+	"Yandex";
 
 /**
  * Keys matching the ones in settings-schema.json

@@ -13797,7 +13797,27 @@ class AccuWeather extends BaseProvider {
     }
 }
 
+;// CONCATENATED MODULE: ./src/3_8/providers/meteo_france.ts
+
+
+class MeteoFrance extends BaseProvider {
+    constructor() {
+        super(...arguments);
+        this.needsApiKey = false;
+        this.prettyName = _("Meteo-France");
+        this.name = "Meteo-France";
+        this.maxForecastSupport = 0;
+        this.maxHourlyForecastSupport = 0;
+        this.website = "https://meteofrance.com/";
+        this.remainingCalls = null;
+    }
+    GetWeather(loc) {
+        throw new Error("Method not implemented.");
+    }
+}
+
 ;// CONCATENATED MODULE: ./src/3_8/config.ts
+
 
 
 
@@ -13834,7 +13854,8 @@ const ServiceClassMapping = {
     "US Weather": (app) => new USWeather(app),
     "Visual Crossing": (app) => new VisualCrossing(app),
     "DanishMI": (app) => new DanishMI(app),
-    "AccuWeather": (app) => new AccuWeather(app)
+    "AccuWeather": (app) => new AccuWeather(app),
+    "Meteo-France": (app) => new MeteoFrance(app)
 };
 const Keys = {
     DATA_SERVICE: "dataService",

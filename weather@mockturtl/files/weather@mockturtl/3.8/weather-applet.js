@@ -13800,19 +13800,105 @@ class AccuWeather extends BaseProvider {
 ;// CONCATENATED MODULE: ./src/3_8/providers/meteo_france.ts
 
 
+
 class MeteoFrance extends BaseProvider {
     constructor() {
         super(...arguments);
         this.needsApiKey = false;
         this.prettyName = _("Meteo-France");
         this.name = "Meteo-France";
-        this.maxForecastSupport = 0;
-        this.maxHourlyForecastSupport = 0;
+        this.maxForecastSupport = 16;
+        this.maxHourlyForecastSupport = 100;
         this.website = "https://meteofrance.com/";
         this.remainingCalls = null;
+        this.baseURL = "https://webservice.meteofrance.com/";
+        this.key = "__Wj7dVSTjV9YGu1guveLyDq0g7S7TfTjaHBTPTpO0kj8__";
+        this.GetWeather = async (loc) => {
+            const params = this.ConstructParams(loc);
+            const result = await this.app.LoadJsonAsync(this.baseURL + "forecast", params);
+            if (result == null)
+                return null;
+            const timeZone = result.position.timezone;
+            return {
+                location: {
+                    city: result.position.name,
+                    country: result.position.country,
+                    timeZone: timeZone,
+                    url: this.website,
+                },
+                coord: {
+                    lat: result.position.lat,
+                    lon: result.position.lon,
+                },
+                date: DateTime.fromSeconds(result.updated_on, { zone: timeZone }),
+                dewPoint: null,
+                sunrise: DateTime.fromSeconds(result.daily_forecast[0].sun.rise, { zone: timeZone }),
+                sunset: DateTime.fromSeconds(result.daily_forecast[0].sun.set, { zone: timeZone }),
+                condition: {
+                    main: result.forecast[0].weather.desc,
+                    icons: ["weather-severe-alert"],
+                    customIcon: "refresh-symbolic",
+                    description: result.forecast[0].weather.desc
+                },
+                wind: {
+                    speed: result.forecast[0].wind.speed,
+                    degree: result.forecast[0].wind.direction,
+                },
+                temperature: CelsiusToKelvin(result.forecast[0].T.value),
+                humidity: result.daily_forecast[0].humidity.max,
+                pressure: result.forecast[0].sea_level,
+                hourlyForecasts: this.GenerateHourlyWeather(result),
+                forecasts: this.GenerateDailyWeather(result),
+            };
+        };
     }
-    GetWeather(loc) {
-        throw new Error("Method not implemented.");
+    GenerateDailyWeather(data) {
+        const timeZone = data.position.timezone;
+        const result = [];
+        for (const day of data.daily_forecast) {
+            if (day.weather12H == null)
+                break;
+            result.push({
+                date: DateTime.fromSeconds(day.dt, { zone: timeZone }),
+                condition: {
+                    main: day.weather12H.desc,
+                    icons: ["weather-severe-alert"],
+                    customIcon: "refresh-symbolic",
+                    description: day.weather12H.desc
+                },
+                temp_max: CelsiusToKelvin(day.T.max),
+                temp_min: CelsiusToKelvin(day.T.min),
+            });
+        }
+        return result;
+    }
+    GenerateHourlyWeather(data) {
+        const timeZone = data.position.timezone;
+        const result = [];
+        for (const hour of data.forecast) {
+            if (hour.T.value == null || hour.weather.desc == null)
+                break;
+            result.push({
+                date: DateTime.fromSeconds(hour.dt, { zone: timeZone }),
+                temp: CelsiusToKelvin(hour.T.value),
+                condition: {
+                    main: hour.weather.desc,
+                    icons: ["weather-severe-alert"],
+                    customIcon: "refresh-symbolic",
+                    description: hour.weather.desc
+                },
+            });
+        }
+        return result;
+    }
+    ConstructParams(loc) {
+        var _a;
+        return {
+            token: this.key,
+            lat: loc.lat,
+            lon: loc.lon,
+            lang: (_a = this.app.config.Language) !== null && _a !== void 0 ? _a : "fr",
+        };
     }
 }
 

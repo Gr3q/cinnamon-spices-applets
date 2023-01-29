@@ -58,7 +58,7 @@ export class SunTimesUI {
         sunriseBox.add_actor(sunriseIcon);
         sunsetBox.add_actor(sunsetIcon);
 
-        const textOptions: Partial<imports.gi.St.BoxLayoutChildInitOptions> = {
+        const textOptions: Partial<imports.gi.St.BoxLayoutChild.ConstructorProperties> = {
             x_fill: false,
             x_align: Align.START,
             y_align: Align.MIDDLE,

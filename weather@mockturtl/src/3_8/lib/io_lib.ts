@@ -12,7 +12,7 @@ const ByteArray = imports.byteArray;
  */
 export async function GetFileInfo(file: imports.gi.Gio.File): Promise<imports.gi.Gio.FileInfo> {
 	return new Promise((resolve, reject) => {
-		file.query_info_async("", Gio.FileQueryInfoFlags.NONE, null, null, (obj, res) => {
+		file.query_info_async("", Gio.FileQueryInfoFlags.NONE, 0, null, (obj, res) => {
 			const result = file.query_info_finish(res);
 			resolve(result);
 			return result;
@@ -65,7 +65,7 @@ export async function LoadContents(file: imports.gi.Gio.File): Promise<string | 
 
 export async function DeleteFile(file: imports.gi.Gio.File): Promise<boolean> {
 	const result: boolean = await new Promise((resolve, reject) => {
-		file.delete_async(null, null, (obj, res) => {
+		file.delete_async(0, null, (obj, res) => {
 			let result = null;
 			try {
 				result = file.delete_finish(res);
@@ -97,7 +97,7 @@ export async function OverwriteAndGetIOStream(file: imports.gi.Gio.File): Promis
 		parent.make_directory_with_parents(null); //don't know if this is a blocking call or not
 
 	return new Promise((resolve, reject) => {
-		file.replace_readwrite_async(null, false, Gio.FileCreateFlags.REPLACE_DESTINATION, null, null, (source_object, result) => {
+		file.replace_readwrite_async(null, false, Gio.FileCreateFlags.REPLACE_DESTINATION, 0, null, (source_object, result) => {
 			const ioStream = file.replace_readwrite_finish(result);
 			resolve(ioStream);
 			return ioStream;
@@ -112,7 +112,7 @@ export async function WriteAsync(outputStream: imports.gi.Gio.OutputStream, buff
 	if (outputStream.is_closed()) return false;
 
 	return new Promise((resolve, reject) => {
-		outputStream.write_bytes_async(text as any, null, null, (obj, res) => {
+		outputStream.write_bytes_async(text as any, 0, null, (obj, res) => {
 			const ioStream = outputStream.write_bytes_finish(res);
 			resolve(true);
 			return true;
@@ -122,7 +122,7 @@ export async function WriteAsync(outputStream: imports.gi.Gio.OutputStream, buff
 
 export async function CloseStream(stream: imports.gi.Gio.OutputStream | imports.gi.Gio.InputStream | imports.gi.Gio.FileIOStream): Promise<boolean> {
 	return new Promise((resolve, reject) => {
-		stream.close_async(null, null, (obj, res) => {
+		stream.close_async(0, null, (obj, res) => {
 			const result = stream.close_finish(res);
 			resolve(result);
 			return result;

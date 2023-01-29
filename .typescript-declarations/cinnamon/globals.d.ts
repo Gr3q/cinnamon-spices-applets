@@ -79,14 +79,7 @@ declare class GJSError extends Error {
     toString(): string;
     copy(): Error;
     free(): void;
-    matches(domain: number, code: imports.gi.Gio.IOErrorEnum): boolean;
-}
-
-declare namespace imports.cairo {
-    export class LinearGradient {
-        constructor(margin: number, gradientOffset: number, width: number, height: number);
-        addColorStopRGBA(number: number, red: number, green: number, blue: number, alpha: number): void;
-    }
+    matches(domain: number, code: number): boolean;
 }
 
 /** @deprecated Mainloop is simply a layer of convenience and backwards-compatibility over some GLib functions (such as `GLib.timeout_add()` which in GJS is mapped to `g_timeout_add_full()`). It's use is not generally recommended anymore */

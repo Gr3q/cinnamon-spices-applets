@@ -77,16 +77,18 @@ declare class GJSError extends Error {
     matches(domain: number, code: number): boolean;
 }
 
-/** @deprecated Mainloop is simply a layer of convenience and backwards-compatibility over some GLib functions (such as `GLib.timeout_add()` which in GJS is mapped to `g_timeout_add_full()`). It's use is not generally recommended anymore */
-declare namespace imports.mainloop {
-    /**
-     * Calls callback function after given seconds
-     * @param seconds 
-     * @param binding 
-     */
-    export function timeout_add_seconds(seconds: number, binding: () => any): void;
-    export function timeout_add(milliseconds: number, binding: () => any, errorCallback?: () => null): number;
-    export function source_remove(id: any): void;
+declare namespace imports {
+    /** @deprecated Mainloop is simply a layer of convenience and backwards-compatibility over some GLib functions (such as `GLib.timeout_add()` which in GJS is mapped to `g_timeout_add_full()`). It's use is not generally recommended anymore */
+    module mainloop {
+        /**
+         * Calls callback function after given seconds
+         * @param seconds 
+         * @param binding 
+         */
+        export function timeout_add_seconds(seconds: number, binding: () => any): void;
+        export function timeout_add(milliseconds: number, binding: () => any, errorCallback?: () => null): number;
+        export function source_remove(id: any): void;
+    }
 }
 
 declare namespace imports.gettext {

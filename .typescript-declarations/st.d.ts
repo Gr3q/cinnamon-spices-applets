@@ -450,6 +450,7 @@ export class BoxLayout<A extends Clutter.Actor = Clutter.Actor>
 
     // Implemented Members
 
+    add(actor: A, options?: Partial<BoxLayoutChild.ConstructorProperties>): void;
     add_actor(actor: A): void;
     child_get_property(child: A, property: string, value: GObject.Value | any): void;
     child_notify(child: A, pspec: GObject.ParamSpec): void;

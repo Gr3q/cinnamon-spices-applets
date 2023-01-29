@@ -35,39 +35,45 @@ import * as xlib from "xlib";
 declare global { 
     namespace imports {
         namespace gi {
-            export {Atk}
-            export {cairo}
-            export {Cally}
-            export {Caribou}
-            export {CDesktopEnums}
-            export {Cinnamon}
-            export {CinnamonDesktop}
-            export {Clutter}
-            export {ClutterX11}
-            export {CMenu}
-            export {Cogl}
-            export {CoglPango}
-            export {Cvc}
-            export {Gdk}
-            export {GdkPixbuf}
-            export {Gio}
-            export {GIRepository}
-            export {GLib}
-            export {GModule}
-            export {GObject}
-            export {Graphene}
-            export {Gst}
-            export {Gtk}
-            export {JavascriptCore}
-            export {Json}
-            export {Meta}
-            export {Pango}
-            export {PangoCairo}
-            export {Soup}
-            export {St}
-            export {XApp}
-            export {xfixes}
-            export {xlib}
+            export {
+                Atk,
+                cairo,
+                Cally,
+                Caribou,
+                CDesktopEnums,
+                Cinnamon,
+                CinnamonDesktop,
+                Clutter,
+                ClutterX11,
+                CMenu,
+                Cogl,
+                CoglPango,
+                Cvc,
+                Gdk,
+                GdkPixbuf,
+                Gio,
+                GIRepository,
+                GLib,
+                GModule,
+                GObject,
+                Graphene,
+                Gst,
+                Gtk,
+                JavascriptCore,
+                Json,
+                Meta,
+                Pango,
+                PangoCairo,
+                Soup,
+                St,
+                XApp,
+                xfixes,
+                xlib,
+            }
         }
     }
+
+    // namespace imports.gi.Clutter.BoxLayout {
+    //     export function add(actor: imports.gi.Clutter.Actor, options: imports.gi.ClutterX11.BoxLayoutChild.ConstructorProperties): any;
+    // }
 }

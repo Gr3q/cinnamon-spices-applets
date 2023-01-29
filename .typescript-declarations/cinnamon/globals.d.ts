@@ -1,10 +1,5 @@
 declare function require(path: string): any;
 
-declare const setInterval: typeof imports.misc.util.setInterval
-declare const clearInterval: typeof imports.misc.util.clearInterval
-declare const setTimeout: typeof imports.misc.util.setTimeout
-declare const clearTimeout: typeof imports.misc.util.clearTimeout
-
 /** Interface typing for the global variable.
  * Extendable, for example overloading in a d.ts file:
  * @example declare interface GlobalExtensions {
@@ -23,7 +18,7 @@ declare interface Global {
     set_cursor(cursor: imports.gi.Cinnamon.Cursor): void;
     unset_cursor(): void;
     /** equivalent to imports.gi.Meta */
-    screen: imports.gi.Meta.Screen;
+    screen: imports.gi.Cinnamon.Screen;
     display: imports.gi.Meta.Display;
     stage: imports.gi.Clutter.Stage;
     /** Gets the pointer coordinates and current modifier key state */

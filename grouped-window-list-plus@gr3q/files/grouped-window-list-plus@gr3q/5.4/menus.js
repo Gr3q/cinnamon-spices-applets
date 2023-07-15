@@ -1,12 +1,3 @@
-import {
-    LOSE_BTN_SIZE,
-    CLOSED_BUTTON_STYLE,
-    OPACITY_OPAQUE,
-    RESERVE_KEYS,
-    FavType,
-    autoStartStrDir
-} from "./constants";
-
 const Clutter = imports.gi.Clutter;
 const Meta = imports.gi.Meta;
 const St = imports.gi.St;
@@ -20,6 +11,14 @@ const SignalManager = imports.misc.signalManager;
 const WindowUtils = imports.misc.windowUtils;
 
 const {each, findIndex, tryFn, unref, trySpawnCommandLine, spawn_async, getDesktopActionIcon} = imports.misc.util;
+const {
+    CLOSE_BTN_SIZE,
+    CLOSED_BUTTON_STYLE,
+    OPACITY_OPAQUE,
+    RESERVE_KEYS,
+    FavType,
+    autoStartStrDir
+} = require('./constants');
 
 const convertRange = function(value, r1, r2) {
     return ((value - r1[0]) * (r2[1] - r2[0])) / (r1[1] - r1[0]) + r2[0];
@@ -28,7 +27,7 @@ const convertRange = function(value, r1, r2) {
 const setOpacity = (peekTime, window_actor, targetOpacity, cb) => {
     const opacity = convertRange(targetOpacity, [0, 100], [0, 255]);
 
-    const tweenConfig: imports.ui.tweener.TweeningParameters & imports.ui.tweener.TweeningExtraParams<{opacity: number}> = {
+    const tweenConfig = {
         time: peekTime * 0.001,
         transition: 'easeOutQuad',
         opacity: opacity > 255 ? 255 : opacity
@@ -42,17 +41,13 @@ const setOpacity = (peekTime, window_actor, targetOpacity, cb) => {
 };
 
 class AppMenuButtonRightClickMenu extends Applet.AppletPopupMenu {
-    signals: imports.misc.signalManager.SignalManager;
-    state: any;
-    groupState: any;
-
-    constructor(params: any, orientation: imports.gi.St.Side) {
+    constructor(params, orientation) {
         super(params, orientation);
         this.state = params.state;
         this.groupState = params.groupState;
 
         this.signals = new SignalManager.SignalManager(null);
-        this.signals.connect(this, 'open-state-changed', (...args: any[]) => this.onToggled(...args));
+        this.signals.connect(this, 'open-state-changed', (...args) => this.onToggled(...args));
     }
 
     monitorMoveWindows(i) {

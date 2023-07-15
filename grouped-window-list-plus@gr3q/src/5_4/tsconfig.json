@@ -3,6 +3,7 @@
 		"lib": [
 			"es2017"
 		],
+		"moduleResolution": "Node",
 		"target": "es2017",
 		"removeComments": true,
 		"sourceMap": true,
@@ -16,6 +17,5 @@
 	},
 	"include": [
 		"./**/*",
-		"../../../.typescript-declarations/**/*",
 	],
 }

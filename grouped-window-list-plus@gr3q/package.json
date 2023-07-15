@@ -10,16 +10,18 @@
   "sideEffects": false,
   "license": "MIT",
   "author": "Attila Greguss",
-  "dependencies": { },
+  "dependencies": {
+    "@ci-types/cjs": "^5.4.6"
+  },
   "devDependencies": {
-    "babel-loader": "8.2.2",
-    "@babel/preset-env": "7.16.4",
     "@babel/core": "7.16.0",
+    "@babel/preset-env": "7.16.4",
+    "babel-loader": "8.2.2",
+    "terser-webpack-plugin": "5.3.6",
     "ts-loader": "9.4.2",
     "typescript": "5.0.2",
     "webpack": "5.75.0",
     "webpack-bundle-analyzer": "4.4.2",
-    "webpack-cli": "4.7.2",
-    "terser-webpack-plugin": "5.3.6"
+    "webpack-cli": "4.7.2"
   }
 }

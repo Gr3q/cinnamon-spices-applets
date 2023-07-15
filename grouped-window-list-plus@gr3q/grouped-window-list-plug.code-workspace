@@ -1,10 +1,6 @@
 {
   "folders": [
     {
-      "path": "../.typescript-declarations",
-      "name": "ts-declarations",
-    },
-    {
       "path": "./",
       "name": "window-list",
     }

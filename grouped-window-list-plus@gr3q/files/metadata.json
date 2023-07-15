@@ -1,0 +1,8 @@
+{
+    "name": "Grouped window list plus",
+    "role": "panellauncher, windowattentionhandler",
+    "uuid": "grouped-window-list-plus@gr3q",
+    "description": "Main Cinnamon window list with app grouping and notification support",
+    "icon": "cs-windows",
+    "max-instances": -1
+}

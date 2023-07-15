@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -eou pipefail
-
 # ./build.sh
 #source ./build3_0.sh
 #rm -rf ~/.local/share/cinnamon/applets/weather@mockturtl/

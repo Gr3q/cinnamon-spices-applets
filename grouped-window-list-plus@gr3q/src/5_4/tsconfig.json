@@ -7,13 +7,11 @@
 		"target": "es2017",
 		"removeComments": true,
 		"sourceMap": true,
-		"strict": true,
-        "noFallthroughCasesInSwitch": true,
-        "exactOptionalPropertyTypes": true,
-        "noImplicitOverride": true,
-        "noImplicitReturns": true,
-		"noImplicitAny": true,
+		"checkJs": true,
         "experimentalDecorators": true,
+		"noEmit": true,
+		"moduleDetection": "force",
+		"types": ["@ci-types/cjs"]
 	},
 	"include": [
 		"./**/*",

@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -eou pipefail
+
 # ./build.sh
 #source ./build3_0.sh
 #rm -rf ~/.local/share/cinnamon/applets/weather@mockturtl/
@@ -15,6 +18,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null && pwd )"
 path=${PWD}
 
 cd $DIR
+mkdir -p ~/.local/share/cinnamon/applets/grouped-window-list-plus@gr3q/
 cp -rf files/grouped-window-list-plus@gr3q/* ~/.local/share/cinnamon/applets/grouped-window-list-plus@gr3q/
 cd ..
 ./cinnamon-spices-makepot grouped-window-list-plus@gr3q

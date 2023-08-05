@@ -17,6 +17,7 @@ const {createStore} = imports.misc.state;
 
 const AppGroup = require('./appGroup');
 const AppList = require('./appList');
+const { NotificationsMonitor } = require("./notificationsMonitor");
 const {
   RESERVE_KEYS,
   TitleDisplay,
@@ -178,6 +179,7 @@ class GroupedWindowListApplet extends Applet.Applet {
 
         this.tracker = Cinnamon.WindowTracker.get_default();
         this.recentManager = Gtk.RecentManager.get_default();
+        this.notificationMonitor = new NotificationsMonitor();
         this.appLists = [];
         // Initialize the default state. Any values passed through store.set must be declared here
         // first, or an error will be thrown.
@@ -431,6 +433,7 @@ class GroupedWindowListApplet extends Applet.Applet {
             }
         }
         this.settings.finalize();
+        this.notificationMonitor.destroy();
         unref(this, RESERVE_KEYS);
     }
 

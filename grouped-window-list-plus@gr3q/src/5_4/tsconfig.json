@@ -6,12 +6,12 @@
 		"moduleResolution": "Node",
 		"target": "es2017",
 		"removeComments": true,
-		"sourceMap": true,
-		"checkJs": true,
+		"sourceMap": false,
+		"strict": true,
         "experimentalDecorators": true,
-		"noEmit": true,
-		"moduleDetection": "force",
-		"types": ["@ci-types/cjs"]
+		"moduleDetection": "legacy",
+		"types": ["@ci-types/cjs"],
+		"outDir": "../../files/grouped-window-list-plus@gr3q/5.4"
 	},
 	"include": [
 		"./**/*",

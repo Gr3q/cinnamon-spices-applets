@@ -15178,6 +15178,7 @@ class OpenMeteo extends BaseProvider {
     }
     ParseWeatherData(data) {
         const time = DateTime.fromSeconds(data.current_weather.time, { zone: data.timezone });
+        const currentHourIndex = data.hourly.time.findIndex(t => t > data.current_weather.time) - 1;
         const sunTimes = (0,suncalc.getTimes)(time.toJSDate(), data.latitude, data.longitude, data.elevation);
         try {
             const result = {
@@ -15201,10 +15202,11 @@ class OpenMeteo extends BaseProvider {
                     degree: data.current_weather.winddirection
                 },
                 condition: this.ResolveCondition(data.current_weather.weathercode, data.current_weather.is_day),
-                humidity: data.hourly.relativehumidity_2m[0],
-                pressure: data.hourly.surface_pressure[0],
-                dewPoint: CelsiusToKelvin(data.hourly.dewpoint_2m[0]),
-                forecasts: []
+                humidity: data.hourly.relativehumidity_2m[currentHourIndex],
+                pressure: data.hourly.surface_pressure[currentHourIndex],
+                dewPoint: CelsiusToKelvin(data.hourly.dewpoint_2m[currentHourIndex]),
+                forecasts: [],
+                hourlyForecasts: []
             };
             for (const [time, weathercode, temp_max, temp_min] of Zip(data.daily.time, data.daily.weathercode, data.daily.temperature_2m_max, data.daily.temperature_2m_min)) {
                 const date = DateTime.fromSeconds(time, { zone: data.timezone });
@@ -15215,6 +15217,36 @@ class OpenMeteo extends BaseProvider {
                     temp_min: CelsiusToKelvin(temp_min)
                 });
             }
+            const hours = [];
+            for (let i = currentHourIndex; i < data.hourly.time.length; i++) {
+                const time = data.hourly.time[i];
+                const temperature_2m = data.hourly.temperature_2m[i];
+                const precipitation_probability = data.hourly.precipitation_probability[i];
+                const precipitation = data.hourly.precipitation[i];
+                const rain = data.hourly.rain[i];
+                const showers = data.hourly.showers[i];
+                const snowfall = data.hourly.snowfall[i];
+                const weathercode = data.hourly.weathercode[i];
+                const is_day = data.hourly.is_day[i];
+                const hourTime = DateTime.fromSeconds(time, { zone: data.timezone });
+                const hour = {
+                    date: hourTime,
+                    condition: this.ResolveCondition(weathercode, is_day),
+                    temp: CelsiusToKelvin(temperature_2m),
+                };
+                const types = ["rain", "rain", "snow"];
+                const precipValues = [rain, showers, snowfall];
+                if (precipitation_probability > 0.1) {
+                    const biggestPrecipitationIndex = precipValues.reduce((iMax, x, i, arr) => x > arr[iMax] ? i : iMax, 0);
+                    hour.precipitation = {
+                        type: types[biggestPrecipitationIndex],
+                        chance: precipitation_probability,
+                        volume: precipitation,
+                    };
+                }
+                hours.push(hour);
+            }
+            result.hourlyForecasts = hours;
             return result;
         }
         catch (err) {

@@ -193,7 +193,7 @@ export class OpenWeatherMap extends BaseProvider {
 				Logger.Error("OpenWeatherMap Weather Parsing error: " + e, e);
 			this.app.ShowError({
 				type: "soft",
-				service: "openweathermap",
+				service: "OpenWeatherMap",
 				detail: "unusual payload",
 				message: _("Failed to Process Current Weather Info")
 			})
@@ -245,7 +245,7 @@ export class OpenWeatherMap extends BaseProvider {
 		if (!this.HasReturnedError(json)) return false;
 		const errorMsg = "OpenWeatherMap Response: ";
 		const error = {
-			service: "openweathermap",
+			service: "OpenWeatherMap",
 			type: "hard",
 		} as AppletError;
 		const errorPayload: OpenWeatherMapError = json;

@@ -146,7 +146,7 @@ export class USWeather extends BaseProvider {
 					type: "hard",
 					userError: true,
 					detail: "location not covered",
-					service: "us-weather",
+					service: "US Weather",
 					message: _("Location is outside US, please use a different provider.")
 				});
 			}
@@ -283,7 +283,7 @@ export class USWeather extends BaseProvider {
 		catch (e) {
 			if (e instanceof Error)
 				Logger.Error("US Weather Parsing error: " + e, e);
-			this.app.ShowError({ type: "soft", service: "us-weather", detail: "unusual payload", message: _("Failed to Process Current Weather Info") })
+			this.app.ShowError({ type: "soft", service: "US Weather", detail: "unusual payload", message: _("Failed to Process Current Weather Info") })
 			return null;
 		}
 	};
@@ -369,7 +369,7 @@ export class USWeather extends BaseProvider {
 		catch (e) {
 			if (e instanceof Error)
 				Logger.Error("US Weather Forecast Parsing error: " + e, e);
-			this.app.ShowError({ type: "soft", service: "us-weather", detail: "unusual payload", message: _("Failed to Process Forecast Info") })
+			this.app.ShowError({ type: "soft", service: "US Weather", detail: "unusual payload", message: _("Failed to Process Forecast Info") })
 			return null;
 		}
 	};
@@ -393,7 +393,7 @@ export class USWeather extends BaseProvider {
 		catch (e) {
 			if (e instanceof Error)
 				Logger.Error("US Weather service Forecast Parsing error: " + e, e);
-			this.app.ShowError({ type: "soft", service: "us-weather", detail: "unusual payload", message: _("Failed to Process Hourly Forecast Info") })
+			this.app.ShowError({ type: "soft", service: "US Weather", detail: "unusual payload", message: _("Failed to Process Hourly Forecast Info") })
 			return null;
 		}
 	}

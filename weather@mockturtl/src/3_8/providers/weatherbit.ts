@@ -148,7 +148,7 @@ export class Weatherbit extends BaseProvider {
 		catch (e) {
 			if (e instanceof Error)
 				Logger.Error("Weatherbit Weather Parsing error: " + e, e);
-			this.app.ShowError({ type: "soft", service: "weatherbit", detail: "unusual payload", message: _("Failed to Process Current Weather Info") })
+			this.app.ShowError({ type: "soft", service: "Weatherbit", detail: "unusual payload", message: _("Failed to Process Current Weather Info") })
 			return null;
 		}
 	};
@@ -175,7 +175,7 @@ export class Weatherbit extends BaseProvider {
 		catch (e) {
 			if (e instanceof Error)
 				Logger.Error("Weatherbit Forecast Parsing error: " + e, e);
-			this.app.ShowError({ type: "soft", service: "weatherbit", detail: "unusual payload", message: _("Failed to Process Forecast Info") })
+			this.app.ShowError({ type: "soft", service: "Weatherbit", detail: "unusual payload", message: _("Failed to Process Forecast Info") })
 			return null;
 		}
 	};
@@ -210,7 +210,7 @@ export class Weatherbit extends BaseProvider {
 		catch (e) {
 			if (e instanceof Error)
 				Logger.Error("Weatherbit Forecast Parsing error: " + e, e);
-			this.app.ShowError({ type: "soft", service: "weatherbit", detail: "unusual payload", message: _("Failed to Process Forecast Info") })
+			this.app.ShowError({ type: "soft", service: "Weatherbit", detail: "unusual payload", message: _("Failed to Process Forecast Info") })
 			return null;
 		}
 	}
@@ -290,7 +290,7 @@ export class Weatherbit extends BaseProvider {
 				type: "hard",
 				userError: true,
 				detail: "bad key",
-				service: "weatherbit",
+				service: "Weatherbit",
 				message: _("Please Make sure you\nentered the API key correctly and your account is not locked")
 			});
 		}

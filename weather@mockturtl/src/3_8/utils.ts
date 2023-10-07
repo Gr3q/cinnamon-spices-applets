@@ -10,7 +10,7 @@ const { Object } = imports.gi.GObject;
 // --------------------------------------------------------------
 // Text Generators
 
-export function _(str: string, args?: KeysValuePairs): string {
+export function _(str: string, args?: Record<string, any>): string {
 	let result = imports.gettext.dgettext(UUID, str);
 
 	if (result === str && result === "")
@@ -21,11 +21,7 @@ export function _(str: string, args?: KeysValuePairs): string {
 	return result;
 }
 
-interface KeysValuePairs {
-	[key: string]: any
-}
-
-export function format(str: string, args: KeysValuePairs) {
+export function format(str: string, args: Record<string, any>) {
 	for (const key in args) {
 		str = str.replace(new RegExp("\\{" + key + "\\}"), args[key]);
 	}
@@ -59,21 +55,21 @@ export function GenerateLocationText(weather: WeatherData, config: Config) {
 export function InjectValues(text: string, weather: WeatherData, config: Config): string {
 	const lastUpdatedTime = AwareDateString(weather.date, config.currentLocale, config._show24Hours, DateTime.local().zoneName);
 	return text.replace(/{t}/g, TempToUserConfig(weather.temperature, config, false) ?? "")
-			   .replace(/{u}/g, UnitToUnicode(config.TemperatureUnit))
-			   .replace(/{c}/g, weather.condition.main)
-			   .replace(/{c_long}/g, weather.condition.description)
-			   .replace(/{dew_point}/g, TempToUserConfig(weather.dewPoint, config, false) ?? "")
-			   .replace(/{humidity}/g, weather.humidity?.toString() ?? "")
-			   .replace(/{pressure}/g, weather.pressure != null ? PressToUserUnits(weather.pressure, config._pressureUnit).toString() : "")
-			   .replace(/{pressure_unit}/g, config._pressureUnit)
-			   .replace(/{extra_value}/g, weather.extra_field ? ExtraFieldToUserUnits(weather.extra_field, config) : "")
-			   .replace(/{extra_name}/g, weather.extra_field ? weather.extra_field.name : "")
-			   .replace(/{wind_speed}/g, weather.wind.speed != null ? MPStoUserUnits(weather.wind.speed, config.WindSpeedUnit) : "")
-			   .replace(/{wind_dir}/g, weather.wind.degree != null ? CompassDirectionText(weather.wind.degree) : "")
-			   .replace(/{city}/g, weather.location.city ?? "")
-			   .replace(/{country}/g, weather.location.country ?? "")
-			   .replace(/{search_entry}/g, config.CurrentLocation?.entryText ?? "")
-			   .replace(/{last_updated}/g, lastUpdatedTime);
+		.replace(/{u}/g, UnitToUnicode(config.TemperatureUnit))
+		.replace(/{c}/g, weather.condition.main)
+		.replace(/{c_long}/g, weather.condition.description)
+		.replace(/{dew_point}/g, TempToUserConfig(weather.dewPoint, config, false) ?? "")
+		.replace(/{humidity}/g, weather.humidity?.toString() ?? "")
+		.replace(/{pressure}/g, weather.pressure != null ? PressToUserUnits(weather.pressure, config._pressureUnit).toString() : "")
+		.replace(/{pressure_unit}/g, config._pressureUnit)
+		.replace(/{extra_value}/g, weather.extra_field ? ExtraFieldToUserUnits(weather.extra_field, config) : "")
+		.replace(/{extra_name}/g, weather.extra_field ? weather.extra_field.name : "")
+		.replace(/{wind_speed}/g, weather.wind.speed != null ? MPStoUserUnits(weather.wind.speed, config.WindSpeedUnit) : "")
+		.replace(/{wind_dir}/g, weather.wind.degree != null ? CompassDirectionText(weather.wind.degree) : "")
+		.replace(/{city}/g, weather.location.city ?? "")
+		.replace(/{country}/g, weather.location.country ?? "")
+		.replace(/{search_entry}/g, config.CurrentLocation?.entryText ?? "")
+		.replace(/{last_updated}/g, lastUpdatedTime);
 }
 
 export function CapitalizeFirstLetter(description: string): string {
@@ -95,6 +91,30 @@ export function CapitalizeEveryWord(description: string): string {
 			result += " ";
 	}
 	return result;
+}
+
+type Iterableify<T> = { [K in keyof T]: Iterable<T[K]> }
+
+
+export function* Zip<T extends Array<any>>(
+	...toZip: Iterableify<T>
+): Generator<T> {
+	// Get iterators for all of the iterables.
+	const iterators = toZip.map(i => i[Symbol.iterator]())
+
+	while (true) {
+		// Advance all of the iterators.
+		const results = iterators.map(i => i.next())
+
+		// If any of the iterators are done, we should stop.
+		if (results.some(({ done }) => done)) {
+			break
+		}
+
+		// We can assert the yield type, since we know none
+		// of the iterators are done.
+		yield results.map(({ value }) => value) as T
+	}
 }
 
 // ---------------------------------------------------------------------------------
@@ -146,8 +166,8 @@ export function GetDayName(date: DateTime, options: GetDayNameOptions = {}): str
 
 	// today or tomorrow, no need to include date
 	if (useTodayTomorrow) {
-	if (date.hasSame(now, "day") || date.hasSame(tomorrow, "day"))
-		delete params.weekday;
+		if (date.hasSame(now, "day") || date.hasSame(tomorrow, "day"))
+			delete params.weekday;
 	}
 
 	if (!!locale)
@@ -646,7 +666,7 @@ export const isFinalized = function (obj: any) {
 interface CompareVersionOptions {
 	/**
 	 * Changes the result if one version string has less parts than the other. In
- 	 * this case the shorter string will be padded with "zero" parts instead of being considered smaller.
+	   * this case the shorter string will be padded with "zero" parts instead of being considered smaller.
 	 */
 	zeroExtend: boolean;
 }

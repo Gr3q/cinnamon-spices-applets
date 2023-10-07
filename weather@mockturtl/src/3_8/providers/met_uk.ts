@@ -86,7 +86,7 @@ export class MetUk extends BaseProvider {
 				userError: true,
 				detail: "location not covered",
 				message: _("MET Office UK only covers the UK, please make sure your location is in the country"),
-				service: "met-uk"
+				service: "Met Office UK"
 			})
 			return null;
 		}
@@ -188,7 +188,7 @@ export class MetUk extends BaseProvider {
 				detail: "no api response",
 				type: "hard",
 				message: _("Data was not found for location"),
-				service: "met-uk",
+				service: "Met Office UK",
 			})
 			return null;
 		}
@@ -263,7 +263,7 @@ export class MetUk extends BaseProvider {
 		catch (e) {
 			if (e instanceof Error)
 				Logger.Error("Met UK Weather Parsing error: " + e, e);
-			this.app.ShowError({ type: "soft", service: "met-uk", detail: "unusual payload", message: _("Failed to Process Current Weather Info") })
+			this.app.ShowError({ type: "soft", service: "Met Office UK", detail: "unusual payload", message: _("Failed to Process Current Weather Info") })
 			return null;
 		}
 	};
@@ -292,7 +292,7 @@ export class MetUk extends BaseProvider {
 		catch (e) {
 			if (e instanceof Error)
 				Logger.Error("MET UK Forecast Parsing error: " + e, e);
-			this.app.ShowError({ type: "soft", service: "met-uk", detail: "unusual payload", message: _("Failed to Process Forecast Info") })
+			this.app.ShowError({ type: "soft", service: "Met Office UK", detail: "unusual payload", message: _("Failed to Process Forecast Info") })
 			return null;
 		}
 	};
@@ -332,7 +332,7 @@ export class MetUk extends BaseProvider {
 		catch (e) {
 			if (e instanceof Error)
 				Logger.Error("MET UK Forecast Parsing error: " + e, e);
-			this.app.ShowError({ type: "soft", service: "met-uk", detail: "unusual payload", message: _("Failed to Process Forecast Info") })
+			this.app.ShowError({ type: "soft", service: "Met Office UK", detail: "unusual payload", message: _("Failed to Process Forecast Info") })
 			return null;
 		}
 	}

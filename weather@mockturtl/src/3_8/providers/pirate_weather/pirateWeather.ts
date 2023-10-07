@@ -165,7 +165,7 @@ export class PirateWeather extends BaseProvider {
 		catch (e) {
 			if (e instanceof Error)
 				Logger.Error("Pirate Weather payload parsing error: " + e, e)
-			this.app.ShowError({ type: "soft", detail: "unusual payload", service: "pirate_weather", message: _("Failed to Process Weather Info") });
+			this.app.ShowError({ type: "soft", detail: "unusual payload", service: "PirateWeather", message: _("Failed to Process Weather Info") });
 			return null;
 		}
 	};
@@ -181,7 +181,7 @@ export class PirateWeather extends BaseProvider {
 				type: "hard",
 				userError: true,
 				detail: "bad key",
-				service: "pirate_weather",
+				service: "PirateWeather",
 				message: _("Please Make sure you\nentered the API key correctly and your account is not locked")
 			});
 			return false;
@@ -191,7 +191,7 @@ export class PirateWeather extends BaseProvider {
 				type: "hard",
 				userError: true,
 				detail: "no key",
-				service: "pirate_weather",
+				service: "PirateWeather",
 				message: _("Please Make sure you\nentered the API key that you have from DarkSky")
 			});
 			return false;

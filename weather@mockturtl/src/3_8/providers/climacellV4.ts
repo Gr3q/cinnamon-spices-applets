@@ -52,7 +52,7 @@ export class ClimacellV4 extends BaseProvider {
 				type: "hard",
 				userError: true,
 				detail: "no key",
-				service: "climacell",
+				service: "Tomorrow.io",
 				message: _("Please Make sure you\nentered the API key that you have from Climacell")
 			});
 			return false;
@@ -119,7 +119,7 @@ export class ClimacellV4 extends BaseProvider {
 			// bit sneaky, but setting the hourly forecast startTime to beginning of the hour
 			// so it is displayed properly
 			date = date.set({ minute: 0, second: 0, millisecond: 0 });
-			
+
 			const hour: HourlyForecastData = {
 				condition: this.ResolveCondition(element.values.weatherCode, IsNight({sunrise, sunset}, date)),
 				date,

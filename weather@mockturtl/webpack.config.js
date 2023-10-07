@@ -11,10 +11,10 @@ const appletName = __dirname.split('/').slice(-1)[0]
 module.exports = {
     mode: 'production',
     entry: './src/3_8/applet.ts',
-    //devtool: "eval-source-map",
+    devtool: false,
     target: 'node', // without webpack renames 'global'
     optimization: {
-        /*minimizer: [
+        minimizer: [
             new TerserPlugin({
                 parallel: true,
                 extractComments: false,
@@ -22,18 +22,18 @@ module.exports = {
                     compress: {
                         defaults: false,
                         unused: true,
-                    },
-                    output: {
-                        beautify: true
+                        dead_code: true,
+                        
                     },
                     mangle: false,
                     format: {
-                        comments: 'all'
-                    }
+                        comments: 'all',
+                        beautify: true,
+                    },
                 }
             })
-        ],*/
-        minimize: false,
+        ],
+        minimize: true,
         usedExports: true,
     },
     module: {

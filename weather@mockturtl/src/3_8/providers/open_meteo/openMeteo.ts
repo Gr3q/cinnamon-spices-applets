@@ -114,7 +114,7 @@ export class OpenMeteo extends BaseProvider {
 					hour.precipitation = {
 						type: types[biggestPrecipitationIndex],
 						chance: precipitation_probability,
-						volume: precipitation,
+						volume: types[biggestPrecipitationIndex] == "snow" ? snowfall * 10 :  precipitation,
 					}
 				}
 
@@ -140,6 +140,167 @@ export class OpenMeteo extends BaseProvider {
 
 	private ResolveCondition(weathercode: number, is_day: boolean = true): Condition {
 		switch (weathercode) {
+			case 0:
+				return {
+					main: _("Clear"),
+					description: _("Clear Sky"),
+					icons: is_day ? ["weather-clear"] : ["weather-clear-night"],
+					customIcon: is_day ? "day-sunny-symbolic" : "night-clear-symbolic"
+				}
+			case 1:
+				return {
+					main: _("Partly Cloudy"),
+					description: _("Partly Cloudy"),
+					icons: is_day ? ["weather-few-clouds"] : ["weather-few-clouds-night"],
+					customIcon: is_day ? "day-cloudy-symbolic" : "night-alt-cloudy-symbolic"
+				}
+			case 2:
+				return {
+					main: _("Cloudy"),
+					description: _("Cloudy"),
+					icons: ["weather-clouds","weather-many-clouds", "weather-overcast", "weather-few-clouds"],
+					customIcon: "cloudy-symbolic"
+				}
+			case 3:
+				return {
+					main: _("Overcast"),
+					description: _("Overcast"),
+					icons: ["weather-overcast"],
+					customIcon: "cloudy-symbolic"
+				}
+			case 45:
+				return {
+					main: _("Fog"),
+					description: _("Fog"),
+					icons: ["weather-fog"],
+					customIcon: "fog-symbolic"
+				}
+			case 48:
+				return {
+					main: _("Freezing Fog"),
+					description: _("Freezing Fog"),
+					icons: ["weather-fog"],
+					customIcon: "fog-symbolic"
+				}
+			case 51:
+				return {
+					main: _("Light Drizzle"),
+					description: _("Light Drizzle"),
+					icons: is_day ? ["weather-showers-scattered", "weather-rain", "weather-freezing-rain"] : ["weather-showers-scattered-night", "weather-rain", "weather-freezing-rain"],
+					customIcon: is_day ? "day-sprinkle-symbolic" : "night-alt-sprinkle-symbolic"
+				}
+			case 53:
+				return {
+					main: _("Drizzle"),
+					description: _("Drizzle"),
+					icons: is_day ? ["weather-showers-scattered", "weather-rain", "weather-freezing-rain"] : ["weather-showers-scattered-night", "weather-rain", "weather-freezing-rain"],
+					customIcon: "sprinkle-symbolic"
+				}
+			case 55:
+				return {
+					main: _("Heavy Drizzle"),
+					description: _("Heavy Drizzle"),
+					icons: is_day ? ["weather-showers-scattered", "weather-rain", "weather-freezing-rain"] : ["weather-showers-scattered-night", "weather-rain", "weather-freezing-rain"],
+					customIcon: "sprinkle-symbolic"
+				}
+			case 56:
+				return {
+					main: _("Light Freezing Drizzle"),
+					description: _("Light Freezing Drizzle"),
+					icons: is_day ? ["weather-freezing-rain", "weather-showers-scattered", "weather-rain"] : ["weather-freezing-rain", "weather-showers-scattered-night", "weather-rain"],
+					customIcon: is_day ? "day-sprinkle-symbolic" : "night-alt-sprinkle-symbolic"
+				}
+			case 57:
+				return {
+					main: _("Freezing Drizzle"),
+					description: _("Freezing Drizzle"),
+					icons: ["weather-freezing-rain", "weather-showers-scattered", "weather-rain"],
+					customIcon: "sprinkle-symbolic"
+				}
+			case 61:
+				return {
+					main: _("Light Rain"),
+					description: _("Light Rain"),
+					icons: is_day ? ["weather-showers-scattered", "weather-rain"] : ["weather-showers-scattered-night", "weather-rain"],
+					customIcon: is_day ? "day-rain-symbolic" : "night-alt-rain-symbolic"
+				}
+			case 63:
+				return {
+					main: _("Rain"),
+					description: _("Rain"),
+					icons: ["weather-rain", "weather-freezing-rain", "weather-showers", "weather-showers-scattered"],
+					customIcon: "rain-symbolic"
+				}
+			case 65:
+				return {
+					main: _("Heavy Rain"),
+					description: _("Heavy Rain"),
+					icons: ["weather-rain", "weather-freezing-rain", "weather-showers", "weather-showers-scattered"],
+					customIcon: "rain-symbolic"
+				}
+			case 66:
+				return {
+					main: _("Light Freezing Rain"),
+					description: _("Light Freezing Rain"),
+					icons: is_day ? ["weather-freezing-rain", "weather-showers-scattered", "weather-rain"] : ["weather-freezing-rain", "weather-showers-scattered-night", "weather-rain"],
+					customIcon: is_day ? "day-rain-symbolic" : "night-alt-rain-symbolic"
+				}
+			case 67:
+				return {
+					main: _("Freezing Rain"),
+					description: _("Freezing Rain"),
+					icons: ["weather-freezing-rain", "weather-showers-scattered", "weather-rain"],
+					customIcon: "rain-symbolic"
+				}
+			case 71:
+				return {
+					main: _("Light Snow"),
+					description: _("Light Snow"),
+					icons: is_day ? ["weather-snow-scattered-day", "weather-snow-scattered", "weather-snow",] : ["weather-snow-scattered-night", "weather-snow"],
+					customIcon: "snow-symbolic"
+				}
+			case 73:
+				return {
+					main: _("Snow"),
+					description: _("Snow"),
+					icons: ["weather-snow", "weather-snow-scattered"],
+					customIcon: "snow-symbolic"
+				}
+			case 75:
+				return {
+					main: _("Heavy Snow"),
+					description: _("Heavy Snow"),
+					icons: ["weather-snow", "weather-snow-scattered"],
+					customIcon: "snow-symbolic"
+				}
+			case 77:
+				return {
+					main: _("Snow grains"),
+					description: _("Snow grains"),
+					icons: ["weather-snow", "weather-snow-scattered", "weather-rain", "weather-showers-scattered"],
+					customIcon: "rain-mix-symbolic"
+				}
+			case 80:
+				return {
+					main: _("Light Rain Shower"),
+					description: _("Light Rain Shower"),
+					icons: is_day ? ["weather-showers-scattered", "weather-rain"] : ["weather-showers-scattered-night", "weather-rain"],
+					customIcon: is_day ? "day-showers-symbolic" : "night-alt-showers-symbolic"
+				}
+			case 81:
+				return {
+					main: _("Rain Shower"),
+					description: _("Rain Shower"),
+					icons: ["weather-showers", "weather-rain"],
+					customIcon: "showers-symbolic"
+				}
+			case 82:
+				return {
+					main: _("Heavy Rain Shower"),
+					description: _("Heavy Rain Shower"),
+					icons: ["weather-showers", "weather-rain"],
+					customIcon: "showers-symbolic"
+				}
 			default:
 				return {
 					main: "Test",

@@ -1,0 +1,18 @@
+# MOUSE KEYS SHORTCUT
+# This file is put in the public domain.
+# GabrielCamara3526, 2025
+#
+msgid ""
+msgstr ""
+
+#. settings-schema.json->section4->description
+msgid "Icon"
+msgstr ""
+
+#. settings-schema.json->reverseIconsWithDarkTheme->description
+msgid "Reverse the icons when using a dark theme"
+msgstr ""
+
+#. settings-schema.json->forceDarkTheme->description
+msgid "Theme incorrectly detected; this is a dark theme"
+msgstr ""
